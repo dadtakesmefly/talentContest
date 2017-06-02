@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height:100%;
+            position: relative;
+            max-width: 640px;
+            margin: 0 auto;
+            background-color: #FFFCEA;
+        }
+        .innerbox{
+            position: absolute;
+            width: 80%;
+            top:40%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+        img{
+            width: 0.8rem;
+            /*position: absolute;*/
+            /*left: -10%;*/
+            /*top:60%;*/
+            margin-left: 0.3rem;
+            transform: translate(-50%,-50%);;
+            vertical-align: middle;
+        }
+        span{
+            display: inline-block;
+            font-size:0.24rem;
+            /*margin-left: 0.3rem;*/
+            margin-top: -0.8rem;
+            vertical-align: middle;
+            color:#A72E26;
+            font-weight: 600;
+            line-height: 0.6rem;
+        }
+        a{-webkit-tap-highlight-color:rgba(255,255,255,0);-webkit-tap-highlight-color:transparent;outline:medium none;}
+
+    </style>
+</head>
+<body>
+<div class="innerbox">
+    <a href="../broadcast/activities.html"><img src="image/iconfont-duigou.png" alt=""/><span>报名成功，5月1日后您可以回来上传参赛作品点击返回到活动主页</span></a>
+</div>
+<!-- 站长统计 start-->
+<div style="display:none">
+    <script src="lib/total.js"></script>
+</div>
+<!-- 站长统计 end -->
+</body>
+
+<script>
+    /*让文字和标签的大小随着屏幕的尺寸做变话 等比缩放*/
+    var html = document.getElementsByTagName('html')[0];
+    //console.log(html);
+    /*取到屏幕的宽度*/
+    var width = window.innerWidth;
+    /* 640 100  320 50 */
+    var fontSize = 100 / 640 * width;
+    /*设置fontsize*/
+    if (width > 640) {
+        fontSize = 100;
+    }
+    html.style.fontSize = fontSize + 'px';
+    window.onresize = function () {
+        var html = document.getElementsByTagName('html')[0];
+        var width = window.innerWidth;
+        var fontSize = 100 / 640 * width;
+        html.style.fontSize = fontSize + 'px';
+    }
+
+//    var u = navigator.userAgent;
+//    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+//    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+//
+//    document.body.onclick= function () {
+//        if((isAndroid)&&(copy1!="copy")){
+//            window.location.href="../broadcast/activities.html?add=copy";   //提示
+//        }
+//        else{
+//            window.location.href="../broadcast/activities.html"
+//        }
+//
+//    }
+
+    document.body.addEventListener("touchstart", function (e) {
+        window.location.href="../broadcast/activities.html"
+    })
+
+</script>
+</html>

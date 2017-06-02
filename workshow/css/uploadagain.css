@@ -1,0 +1,174 @@
+html,
+body {
+    background-color: #FFFCEA;
+    box-sizing: border-box;
+    max-width: 640px !important;
+    margin: 0 auto;
+
+}
+.top img {
+    width: 100%;
+}
+input {
+    background-color: #FEEAB6;
+    height: 0.70rem;
+    line-height: normal;
+    vertical-align: middle;
+    width: 100%;
+    margin-bottom: 0.04rem;
+    text-indent: 1em;
+    color: #DF8135;
+    border-radius: 6px;
+    font-size: 0.2rem;
+}
+.myform {
+    padding: 0 20px;
+}
+.myform .title {
+    font-size: 0.36rem;
+    font-family: "SimHei";
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    color: #A72E26;
+}
+.myform .sbm {
+    width: 92%;
+    margin-left: 4%;
+    margin-bottom: 0.4rem;
+    margin-top: 0.5rem;
+    background-color: #E74538;
+    border-radius: 8px;
+    box-shadow: 0px 5px 0px #C82323;
+    color: white;
+    font-size: 0.30rem !important;
+    font-family: "SimHei";
+    -webkit-appearance: none;
+    text-indent: 0.00rem;
+}
+.myform .diqu {
+    position: relative;
+    width: 40%;
+    float: left;
+    vertical-align: middle;
+    z-index: 10;
+}
+.myform .diqu .area {
+    background-color: #FEEAB6;
+    height: 0.70rem;
+    width: 100%;
+    vertical-align: middle;
+    margin-bottom: 4px;
+    color: #DF8135;
+    border-radius: 6px;
+    text-indent: 1em;
+    font-size: 0.2rem;
+    z-index: 10;
+}
+.myform .diqu .area option {
+    width: 30%;
+    color: #DF8135;
+    background-color: #fff;
+    font-size: 0.2rem;
+}
+.myform .diqu .arrow {
+    position: absolute;
+    top: 0.2rem;
+    right: 5px;
+    z-index: 0 ;
+    width: 10%;
+}
+.myform .tipss {
+    padding: 0 0px;
+    vertical-align: middle;
+    color: #A72E26;
+    font-size: 0.2rem;
+    margin-top: 0.5rem;
+    line-height: 0.1rem;
+}
+.uploadchild{
+    display: block;
+    width: 40%;
+    height: 1.5rem;
+    background: url("../images/upload.png") center 20% no-repeat;
+    background-color: #FFCD7A;
+    font-size: 0.24rem;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 0.04rem;
+}
+.uploadchild span{
+    display: block;
+    position: absolute;
+    bottom: 0.25rem;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    color:#A72E26;
+    font-size: 0.2rem;
+}
+.uploadchild i{
+    position: absolute;
+    bottom: 0;
+    left: 2.0rem;
+    width: 1.5rem;
+    color:#A72E26;
+    top:50%;
+    font-size: 0.24rem;
+    transform: translateY(-16%);
+}
+.links {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 0.30rem;
+}
+.tips{
+    font-size: 0.2rem;
+}
+.tipsss{
+    margin-left: 0.1rem;
+    font-size: 0.2rem;
+}
+.links span {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #FFCD7A;
+    border-radius: 8px;
+    height: 0.70rem;
+    line-height: 0.7rem;
+    color: #A72E26;
+    font-weight: 600;
+    font-family: '微软雅黑', Arial;
+    letter-spacing: 1px;
+    font-size: 0.28rem;
+    box-shadow: 0 4px 0 #EEB65A;
+}
+.demo {
+    font-size: 0.36rem;
+    font-family: "SimHei";
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    color: #A72E26;
+}
+.image {
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: content-box;
+    background-clip: content-box;
+    border-radius: 10px;
+}
+.image .box {
+    border-radius: 30px;
+    padding: 10px;
+    background-color: #FEEAB6;
+}
+.image .box img {
+    padding: 5px;
+    text-align: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+}

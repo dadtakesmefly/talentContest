@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta type="description" content="获奖名单内容">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/prize.css"/>
+    <link rel="stylesheet" href="../broadcast/css/tabstyles.css"/>
+    <script src="jquery-1.8.3/jquery.min.js"></script>
+    <script src="lib/template.js"></script>
+    <script src="../broadcast/js/cbpFWTabs.js"></script>
+    <title>获奖名单</title>
+</head>
+<body>
+<div class="top">
+    <img src="images/头部图.png" alt=""/>
+</div>
+<section>
+    <div class="tabs tabs-style-iconbox">
+        <nav>
+            <ul>
+                <li><a href="#" class=""><img src="images/手工类.png" alt=""/></a></li>
+                <li><a href="#" class=""><img src="images/绘画类.png" alt=""/></a></li>
+                <li><a href="#" class=""><img src="images/书法类.png" alt=""/></a></li>
+                <li><a href="#" class=""><img src="images/写作类.png" alt=""/></a></li>
+            </ul>
+        </nav>
+        <div class="content-wrap">
+            <section id="section-iconbox-1">
+
+            </section>
+            <section id="section-iconbox-2">
+
+            </section>
+            <section id="section-iconbox-3">
+
+            </section>
+            <section id="section-iconbox-4">
+
+            </section>
+        </div>
+        <!-- /content -->
+    </div>
+    <!-- /tabs -->
+</section>
+
+<div class="links">
+    <img src="images/爱信.png" alt=""/>
+    <span>华夏爱信</span><br/>
+    <span>让公益更简单</span>
+    <span class="downloading">下载爱信APP</span>
+    <img  class="close" src="images/取消按钮.png" alt=""/>
+</div>
+
+<div class="backtop">
+    <img src="images/回到顶部.png" alt=""/>
+</div>
+<div class="foot"></div>
+<!--站长统计 start-->
+<div style="display:none">
+    <script src="lib/total.js"></script>
+</div>
+<!--站长统计 end -->
+</body>
+<script>
+    (function () {
+        [].slice.call(document.querySelectorAll('.tabs')).forEach(function (el) {
+            new CBPFWTabs(el);
+        });
+    })();
+    /*让文字和标签的大小随着屏幕的尺寸做变话 等比缩放*/
+    var html = document.getElementsByTagName('html')[0];
+    var width = window.innerWidth;
+    var fontSize = 100 / 640 * width;
+    if (width > 640) {
+        fontSize = 100;
+    }
+    html.style.fontSize = fontSize + 'px';
+    window.onresize = function () {
+        var html = document.getElementsByTagName('html')[0];
+        var width = window.innerWidth;
+        var fontSize = 100 / 640 * width;
+        html.style.fontSize = fontSize + 'px';
+    }
+</script>
+<script type="text/html" id="first">
+    <div class="list clearfix">
+        <ul>
+            {{each list_1 as v i}}
+            <li class="clearfix">
+                <div class="left fl">
+                    <img src="images/优秀奖.png" alt=""/>
+                    <p>优秀奖</p>
+                </div>
+                <div class="center">
+                    <img class="pic fl" src="{{v.worksContent[0]}}" alt=""/>
+                    <p class="bianhao">{{v.workNumber}}</p>
+                </div>
+                <h3>{{v.workName}}</h3>
+                <p>综合评分：<span>{{v.score}}</span></p>
+                <span style="display: none" class="phone">{{v.actRegisterPhone}}</span>
+                <hr/>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</script>
+<script type="text/html" id="second">
+    <div class="list clearfix">
+        <ul>
+            {{each list_2 as v i}}
+            <li class="clearfix">
+                <div class="left fl">
+                    <img src="images/优秀奖.png" alt=""/>
+                    <p>优秀奖</p>
+                </div>
+                <div class="center">
+                    <img class="pic fl" src="{{v.worksContent[0]}}" alt=""/>
+                    <p class="bianhao">{{v.workNumber}}</p>
+                </div>
+                <h3>{{v.workName}}</h3>
+                <p>综合评分：<span>{{v.score}}</span></p>
+                <span style="display: none" class="phone">{{v.actRegisterPhone}}</span>
+                <hr/>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</script>
+<script type="text/html" id="third">
+    <div class="list clearfix">
+        <ul>
+            {{each list_3 as v i}}
+            <li class="clearfix">
+                <div class="left fl">
+                    <img src="images/优秀奖.png" alt=""/>
+                    <p>优秀奖</p>
+                </div>
+                <div class="center">
+                    <img class="pic fl" src="{{v.worksContent[0]}}" alt=""/>
+                    <p class="bianhao">{{v.workNumber}}</p>
+                </div>
+                <h3>{{v.workName}}</h3>
+                <p>综合评分：<span>{{v.score}}</span></p>
+                <span style="display: none" class="phone">{{v.actRegisterPhone}}</span>
+                <hr/>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</script>
+<script type="text/html" id="fouth">
+    <div class="list clearfix">
+        <ul>
+            {{each list_4 as v i}}
+            <li class="clearfix">
+                <div class="left fl">
+                    <img src="images/优秀奖.png" alt=""/>
+                    <p>优秀奖</p>
+                </div>
+                <div class="center">
+                    <img class="pic fl" src="{{v.worksContent[0]}}" alt=""/>
+                    <p class="bianhao">{{v.workNumber}}</p>
+                </div>
+                <h3>{{v.workName}}</h3>
+                <p>综合评分：<span>{{v.score}}</span></p>
+                <span style="display: none" class="phone">{{v.actRegisterPhone}}</span>
+                <hr/>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</script>
+<script>
+    $.ajax({
+        url: "./json/prize.json",
+        type: "get",
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            console.log(data.list_1[0].worksContent [0]);
+            var html1=template("first",data)
+            $("#section-iconbox-1").html(html1);
+            var html2=template("second",data)
+            $("#section-iconbox-2").html(html2);
+            var html3=template("third",data)
+            $("#section-iconbox-3").html(html3);
+            var html4=template("fouth",data)
+            $("#section-iconbox-4").html(html4);
+            $(".list ul li:first-child .left img").attr("src","./images/第一名.png")
+            $(".list ul li:first-child .left p").html("第一名");
+            $(".list ul").find("li:eq(1) .left img").attr("src","./images/第二名.png")
+            $(".list ul").find("li:eq(1) .left p").html("第二名");
+            $(".list ul").find("li:eq(2) .left img").attr("src","./images/第二名.png")
+            $(".list ul").find("li:eq(2) .left p").html("第二名");
+            $(".list ul").find("li:eq(3) .left img").attr("src","./images/第三名.png")
+            $(".list ul").find("li:eq(3) .left p").html("第三名");
+            $(".list ul").find("li:eq(4) .left img").attr("src","./images/第三名.png")
+            $(".list ul").find("li:eq(4) .left p").html("第三名");
+            $(".list ul").find("li:eq(5) .left img").attr("src","./images/第三名.png")
+            $(".list ul").find("li:eq(5) .left p").html("第三名");
+            $(".list ul li:nth-last-child(-n+9) .left p").html("纪念奖").css({"margin-top":"0.25rem"})
+            $(".list ul li:nth-last-child(-n+9) .left img").attr("src","./images/纪念奖.png").css({"margin-top":"0.25rem"});
+            $(".content-wrap section ul li").on("click", function () {
+                var workNumber=$(this).find(".bianhao").text();
+                var phone=$(this).find(".phone").text();
+                window.location.href="./voteshow.html"+"?actRegisterPhone="+phone+"&workNumber="+workNumber
+            })
+        }
+    })
+    //判断用户设备是pc还是移动
+    function browserRedirect() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            return
+        } else {
+            $(".links").hide();
+            $(".backtop").css({"bottom":"10px"})
+        }
+    }
+    browserRedirect();
+
+    $(function () {
+        $(".close").on("click", function () {
+            $(".links").fadeOut();
+            $(".backtop").animate({"bottom":"10px"})
+        })
+        $(".downloading").on("click", function () {
+            window.location.href="./download.html"
+        })
+    })
+    $(function () {
+        $(window).scroll(function(){
+            var top= $(document).scrollTop();
+            if(top<200){
+                $(".backtop").css({"display":"none"})
+                $(".foot").animate({"height":"10px"})
+            }
+            else{
+                $(".backtop").css({"display":"block"})
+            }
+        })
+        $(".backtop").on('click', function() {
+            $("html,body").animate({scrollTop:0}, 0);
+        });
+    })
+</script>
+</html>
+

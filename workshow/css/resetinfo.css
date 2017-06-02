@@ -1,0 +1,100 @@
+html,
+body {
+    background-color: #FFFCEA;
+    box-sizing: border-box;
+    max-width: 640px !important;
+    margin: 0 auto;
+}
+.top img {
+    width: 100%;
+}
+input {
+    background-color: #FEEAB6;
+    height: 0.70rem;
+    line-height: normal;
+    vertical-align: middle;
+    width: 100%;
+    margin-bottom: 0.04rem;
+    text-indent: 1em;
+    color: #DF8135;
+    border-radius: 6px;
+    font-size: 0.2rem;
+}
+.myform {
+    padding: 0 20px;
+}
+.myform .title {
+    font-size: 0.36rem;
+    font-family: "SimHei";
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    color: #A72E26;
+}
+
+.myform .addtitle {
+    margin-bottom: 0.04rem;
+}
+.myform .addtitle1 {
+    position: relative;
+}
+.myform .addtitle1 span {
+    display: block;
+    width: 1.4rem;
+    height: 1.44rem;
+    position: absolute;
+    background-color: #FFCD7A;
+    right: 0px;
+    top: 0px;
+    text-align: center;
+    line-height: 0.6rem;
+    color: #A72E26;
+    font-size: 0.2rem;
+}
+.myform .addtitle1 span img {
+    width: 30%;
+    margin-left: 50%;
+    margin-top: 20%;
+    transform: translateX(-50%);
+}
+.myform .add {
+    width: 50%;
+    height: 0.7rem;
+    display: inline-block;
+    text-align: center;
+    background: url("../images/增加.png") no-repeat;
+    background-size: 15%;
+    background-position: 5% 50%;
+    line-height: 0.7rem;
+    background-color: #FFCD7A;
+    border-radius: 8px;
+    color: #A72E26;
+    padding: 0 0.2rem 0rem 0.4rem;
+    box-sizing: border-box;
+}
+
+.myform .test {
+    width: 70% ;
+    border-radius: 6px 0 0 6px;
+}
+.myform .btn {
+    width: 30%;
+    background-color: #FFCD7A;
+    text-indent: 0em;
+    font-family: "SimHei";
+    border-radius: 0 6px 6px 0px;
+    -webkit-appearance: none;
+}
+.myform .sbm {
+    width: 92%;
+    margin-left: 4%;
+    margin-bottom: 0.4rem;
+    margin-top: 3.0rem;
+    background-color: #E74538;
+    border-radius: 8px;
+    box-shadow: 0px 5px 0px #C82323;
+    color: white;
+    font-size: 0.30rem !important;
+    font-family: "SimHei";
+    -webkit-appearance: none;
+    text-indent: 0.00rem;
+}

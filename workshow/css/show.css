@@ -1,0 +1,293 @@
+html,
+body {
+    background-color: #FFFCEA;
+    box-sizing: border-box;
+    max-width: 640px !important;
+    margin: 0 auto;
+}
+.top img {
+    width: 100%;
+}
+.myform {
+    padding: 20px 20px;
+}
+.upload{
+    display: block;
+    width: 100%;
+    height: 2rem;
+    background: url("../images/upload.png") 15% 50% no-repeat;
+    background-color: #FFCD7A;
+    font-size: 0.24rem;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 0.04rem;
+    border:1px dashed #D6A24C;
+}
+.upload span{
+    display: block;
+    position: absolute;
+    bottom: 0.25rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-45%,-30%);
+    /*width: 100%;*/
+    color:#A72E26;
+    font-size: 0.30rem;
+}
+.editor{
+    cursor: pointer;
+}
+.msg{
+
+    /*text-align: center;*/
+    /*background-color: #FFEACB;*/
+    height: 2rem;
+    padding: 0 10px;
+    margin-top: 0.5rem;
+
+}
+.msg .out{
+    background-color: #FFEACB;
+    border: 4px solid #C82323;
+    height: 3rem;
+    position: relative;
+    border-radius: 8px;
+}
+.msg .out .pic{
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    border:6px solid #F4CB8E;
+    float: left;
+    margin-left: 0.6rem;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+.msg .out .title{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -0.36rem;
+
+}
+.msg .out .box{
+    /*width: 100%;*/
+    position: absolute;
+    left: 40%;
+    top:50%;
+    transform:translateY(-50%);
+
+}
+.box .editor{
+    position: absolute;
+    top:-0.4rem;
+    right: -0.2rem;
+}
+.box .editor span{
+    font-size: 0.22rem;
+    color: #E7483B;
+}
+.box .editor .bianji{
+    width: 15%;
+
+}
+.msg .child {
+    line-height: 0.5rem;
+    font-size: 0.30rem;
+    color:#D92B2C;
+    font-weight: 600;
+    /*background-color: #FDE6C4;*/
+    padding: 10px 100px 5px 0px;
+
+}
+.msg .child span{
+    font-size: 0.30rem;
+}
+.msg .school{
+    /*background-color: #FDE6C4;*/
+    margin-top: 0.1rem;
+    font-size: 0.26rem;
+    color:#D92B2C;
+    padding: 10px 100px 5px 0px;
+}
+.teacher{
+    /*height: 2rem;*/
+    padding: 0 10px;
+    margin-top: 2rem;
+}
+.teacher .box{
+    background-color: #FFEACB;
+    /*border: 4px solid #C82323;*/
+    /*height: 3rem;*/
+    position: relative;
+    border-radius: 8px;
+
+}
+.teacher .box .fudaoyuan{
+    width: 35%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -0.40rem;
+
+}
+.teacher .box ul{
+    padding-top: 0.5rem;
+    padding-bottom: 1.2rem;
+    /*padding: 0.5rem 0rem 1.2rem 0.4rem;*/
+    color:#A72E26 !important;
+}
+.teacher .box .teacherlist li{
+    float: left;
+    width: 30%;
+    line-height: 0.5rem;
+    text-align: center;
+    color:#A72E26 !important;
+}
+.organization{
+    /*height: 2rem;*/
+    padding: 0 10px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.organization .box{
+    background-color: #FFEACB;
+    /*border: 4px solid #C82323;*/
+    /*height: 3rem;*/
+    position: relative;
+    border-radius: 8px;
+
+}
+.organization .box img{
+    width: 75%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -0.40rem;
+
+}
+.organization .box ul{
+    padding-top: 0.5rem;
+    padding-bottom: 0.4rem;
+    padding-left: 15%;
+
+}
+.organization .box ul li{
+    /*float: left;*/
+    /*width: 30%;*/
+    /*line-height: 0.8rem;*/
+    color:#A72E26;
+
+    /*text-align: center;*/
+}
+.organization .box ul li span{
+    /*margin-left: -4px;*/
+}
+.organization .box ul li .fuzeren{
+    margin-left: 10px;
+}
+.organization .box ul li:nth-child(2){
+    margin-left: 10px;
+}
+.show {
+    padding: 10px;
+    margin-top: -2.5rem;
+}
+.show ul {
+
+}
+.show ul li {
+    margin-top: 0.3rem;
+    text-align: center;
+
+}
+.show ul  li img:nth-child(1){
+    width: 95%;
+    border-radius: 8px;
+    margin: 0 auto;
+    position: relative;
+    border: 6px solid #E9DCCD;
+}
+.show ul  li img:nth-child(2){
+    width: 100%;
+    margin-top: -0.2rem;
+    /*border-radius: 8px;*/
+}
+.vote{
+    padding: 0 10px;
+
+}
+.vote .innerbox{
+    /*text-align: center;*/
+    background:url("../images/投票的背景.png") no-repeat;
+    height: 1.5rem;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    background-clip:padding-box;
+    position: relative;
+    overflow: hidden;
+    text-indent: 2em;
+}
+.vote .innerbox p:nth-child(1){
+    color:#A72E26;
+    margin-top: 0.2rem;
+    font-size: 0.24rem;
+
+}
+.vote .innerbox p:nth-child(2){
+    color:#A72E26;
+    margin-top: 0.15rem;
+    font-size: 0.24rem;
+}
+.vote .innerbox span:nth-child(3){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(60%,-80%);
+    background-color: #E74538;
+    color:white;
+    text-align: center;
+    text-indent: 0;
+    padding: 0.1rem 0.2rem;
+    font-size: 0.24rem;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+.vote .innerbox p span{
+    color:#E7483B;
+        font-size: 0.24rem;
+}
+.xiugai {
+    text-align: center;
+}
+.xiugai .gaixie{
+    float: left;
+}
+span{
+    /*margin-left: -4px;*/
+}
+.back{
+    width: 50%;
+    margin: 0 auto;
+    background-color: #E74538;
+    height: 0.7rem;
+    text-align: center;
+    display: block;
+    line-height: 0.7rem;
+    color:white;
+    border-radius: 8px;
+    box-shadow: 0 4px 0 #C82323;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+.votetitle{
+    text-align: center;
+
+}
+.votetitle span{
+    font-size: 0.28rem;
+}

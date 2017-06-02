@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!--<meta charset="UTF-8">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/form.css"/>
+    <link rel="stylesheet" href="css/formdata.css"/>
+    <script src="../jquery-1.8.3/jquery.min.js"></script>
+    <script src="../layer/layer.js"></script>
+    <script src="lib/formdata.js"></script>
+    <script>
+        //    var domain = "http://7xocov.com1.z0.glb.clouddn.com/"; // you bucket domain  eg: http://xxx.bkt.clouddn.com
+        var domain = "http://oodpya7z3.bkt.clouddn.com/"; // you bucket domain  eg: http://xxx.bkt.clouddn.com
+    </script>
+    <!--[if lt IE 9]>
+    <!--<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>-->
+    <!--<![endif]&ndash;&gt;-->
+    <title>报名参赛_留守儿童才艺大赛</title>
+    <style>
+        body .demo-class .layui-layer-title{background:#E74538; color:#fff; border: none;}
+        body .demo-class .layui-layer-btn a {background:#E74538;}
+        body .demo-class .layui-layer-btn a {border: none}
+        body .demo-class .layui-layer-btn .layui-layer-btn1{background:#999;}
+    </style>
+</head>
+<body>
+    <div class="top">
+        <img src="image/红色头顶.png" alt=""/>
+    </div>
+    <form class="myform" id="myform" action="http://192.168.31.248:7070/AXGY_OP/enrollment">
+        <h3 class="title">辅导学校或公益团队信息</h3>
+        <input class="organization" required name="organization" id="organization" type="text" placeholder="请填写辅导学校或公益团队名称"/>
+        <div class="diqu">
+            <select name="area" class="area" id="area">
+                <option value="所在区域">所在区域</option>
+                <option value="武都区">武都区</option>
+                <option value="宕昌">宕昌</option>
+                <option value="文县">文县</option>
+                <option value="康县">康县</option>
+                <option value="成县">成县</option>
+                <option value="徽县">徽县</option>
+                <option value="礼县">礼县</option>
+                <option value="西和">西和县</option>
+                <option value="两当">两当县</option>
+            </select>
+            <img class="arrow" src="image/arrow.png" alt=""/>
+        </div>
+
+        <span class="tip">本次活动仅限陇南八县一区</span>
+        <input name="person" type="text" class="person" id="person" placeholder="活动负责人姓名"/>
+        <input name="telphone" type="tel" class="telphone" id="telphone" placeholder="活动负责人联系方式"/>
+
+        <h3 class="title">参赛儿童信息</h3>
+        <input name="child" type="text" class="child" id="child" placeholder="请填写参赛儿童姓名"/>
+
+
+        <!--<div class="upload">-->
+            <!--<iframe src="iframe.html"  frameborder="0">-->
+            <!--</iframe>-->
+
+
+        <!--</div>-->
+
+
+        <input id="school" name="school" name="school" placeholder="参赛儿童所在学校" type="text"/>
+
+
+        <h3 class="title" id="fudao">辅导老师(志愿者)信息</h3>
+
+        <div class="addtitle">
+            <input name="teacher" type="text" class="teacher" id="teacher" placeholder="请填写辅导员老师姓名"/>
+            <input name="teachertel" type="tel" class="teachertel" id="teachertel" placeholder="请填写辅导员老师联系方式"/>
+        </div>
+        <div class="addtitle1" style="display: none">
+            <input name="teacher" type="text" class="teacher" id="teacher1" placeholder="请填写辅导员老师姓名"/>
+            <input name="teachertel" type="tel" class="teachertel" id="teachertel1" placeholder="请填写辅导员老师联系方式"/>
+            <span class="remove"><img src="image/移除.png" alt=""/>移除</span>
+        </div>
+        <div class="addd"></div>
+        <!--<input type="button" name="add" id="add" class="add" value="增加辅导老师"/>-->
+        <!--<span class="add"><img src="image/增加.png" alt=""/>增加辅导老师</span>-->
+        <span class="add" id="add">增加辅导老师</span>
+
+
+
+
+
+
+
+
+        <!--<img style="display: none" id="getscr" src="" name="url" alt=""/>-->
+        <input style="display: none" id="actphone" name="actRegisterPhone" value=""  type="text"/>
+        <input style="display: none" id="getscr" name="url" value="" type="text" />
+        <div class="box3">
+            <hr/>
+            <span class="confirm">确认报名</span>
+        </div>
+
+        <input type="button" id="sbm" class="sbm" value="提交"/>
+    </form>
+
+
+    <!--<div class="container" id="container">-->
+        <!--&lt;!&ndash;<div class="title">Formdata 上传 demo</div>&ndash;&gt;-->
+        <!--&lt;!&ndash; Document：https://developer.qiniu.com/kodo/manual/form-upload &ndash;&gt;-->
+        <!--<form id="testform" method="post" enctype="multipart/form-data">-->
+            <!--<input name="key" id="key" type="hidden" value="">-->
+            <!--<input name="token" type="hidden" value="4o7O45PAxUhsWLuPWxdxExCBo-DBhYJEgUuVUjju:k2pbSQ5rCW-W9JDaWzhDY_nuQ1g=:eyJzY29wZSI6ImNoaWxkcmVuLXN0YWxlbnQtc2hvdyIsImRlYWRsaW5lIjoxNTA3NzEyMDQwfQ==">-->
+            <!--<input id="userfile" name="file" type="file">-->
+            <!--&lt;!&ndash; take photo with phone &ndash;&gt;-->
+             <!--&lt;!&ndash;<input id="userfile" name="file" accept="image/*" type="file" />&ndash;&gt;-->
+
+            <!--&lt;!&ndash; take video with phone &ndash;&gt;-->
+             <!--&lt;!&ndash;<input id="userfile" name="file" type="file" accept="video/*"/> &ndash;&gt;-->
+            <!--<input name="accept" type="hidden">-->
+        <!--</form>-->
+        <!--<label for="userfile">-->
+            <!--<img class="icon" src="image/upload.png" alt=""/>-->
+            <!--<em>上传参赛儿童照片</em>-->
+        <!--</label>-->
+        <!--<div class="uploaded-result"></div>-->
+        <!--&lt;!&ndash; upload info &ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="selected-file"></div>&ndash;&gt;-->
+        <!--<div class="progress"></div>-->
+
+    <!--</div>-->
+    <!--<input type="file" name="file" accept="image/*" >-->
+        <div class="desc">
+            <ul>
+               <li>公益团队、学校和参赛儿童共同署名报名参加和投稿参赛；</li>
+               <li>参赛作品以照片、电子文件参赛；</li>
+               <li>照片无需加水印、字幕和相关说明，报送图片为jpg格式，文件大小控制在3-10MB以内；</li>
+               <li>参赛作品需提交参赛公益组组织或学校名称，参赛儿童姓名、性别、年龄、个人照片，辅导老师（志愿者）姓名、性别、年龄、个人照片及联系方式</li>
+               <li>以上最终解释权归爱信公益APP所有</li>
+        </ul>
+
+        </div>
+</body>
+<!-- 站长统计 start-->
+<div style="display:none">
+    <script src="lib/total.js"></script>
+</div>
+<!-- 站长统计 end -->
+<script>
+
+//    window.alert = function(name){
+//        var iframe = document.createElement("IFRAME");
+//        iframe.style.display="none";
+////        iframe.setAttribute("src", 'data:text/plain,');
+//        document.documentElement.appendChild(iframe);
+//        window.frames[0].window.alert(name);
+//        iframe.parentNode.removeChild(iframe);
+//    };
+
+
+$.fn.serializeObject = function()
+{
+    var list=[];
+    var name=[];
+    var phone=[];
+    var a = this.serializeArray();
+    $.each(a, function(index,obj) {
+
+        if (obj.name == 'teacher') {
+           name.push(obj.value)
+        }
+        if (obj.name == 'teachertel') {
+           phone.push(obj.value)
+        }
+    });
+    for(var i=0;i<name.length;i++){
+        var o={};
+        if(name[i]!=""|| phone[i]!=""){
+        o.name=name[i];
+        o.phone=phone[i];
+            list.push(o);
+        }
+  }
+    var key= a.length+1
+    var v={"name":"teacherTel","value":JSON.stringify(list)}
+    a[key]=v;
+    return a;
+};
+
+function GetQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
+    var context = "";
+    if (r != null)
+        context = r[2];
+    reg = null;
+    r = null;
+    return context == null || context == "" || context == "undefined" ? "" : context;
+}
+var actphone=GetQueryString("actRegisterPhone");
+console.log(GetQueryString("actRegisterPhone"));
+
+$("#actphone").attr("value",actphone);
+
+
+/*让文字和标签的大小随着屏幕的尺寸做变话 等比缩放*/
+    var html = document.getElementsByTagName('html')[0];
+
+    var width = window.innerWidth;
+
+    var fontSize = 100/640*width;
+
+    if(width>640){
+        fontSize=100;
+    }
+    html.style.fontSize = fontSize +'px';
+    window.onresize = function(){
+        var html = document.getElementsByTagName('html')[0];
+
+        var width = window.innerWidth;
+
+        var fontSize = 100/640 * width;
+
+        html.style.fontSize = fontSize +'px';
+    }
+
+    $(function () {
+        $("#add").on("click", function () {
+            $(".addd").first().append($(".addtitle1:first").first().clone(true).attr('class',"addtitle1 clone").attr("style","display:block"));
+            $(".remove").on("click", function () {
+                $(this).parent(".clone").remove();
+            })
+        });
+    })
+
+
+
+$("#sbm").on("click", function () {
+//    var src= $("#getscr").attr("value")
+//    console.log(src);
+    $("#myform").serializeObject();
+    console.log($("#myform").serializeObject());
+    $.ajax({
+        url:"https://rest.cnaisin.com:8443/AXGY_OP/enrollment",
+        type:"post",
+        data:$("#myform").serializeObject(),
+        success: function (data) {
+            console.log(data)
+            if(data.ok==true){
+//                alert("提交成功");
+                window.location.href="./succeed.html"
+            }
+            else if(data.msg=="提交失败" ){
+//                alert("提交失败")
+                layer.open({
+                    skin:"demo-class",
+                    title:"提示",
+                    content:"提交失败"
+                })
+
+            }
+            else if(data.msg=="您已经报名成功，5月1日后可上传参赛作品！"){
+//                alert("请不要重复提交");
+                layer.open({
+                    skin:"demo-class",
+                    title:"提示",
+                    content:"请不要重复提交"
+                })
+
+            }
+            else if(data.exCode==""){
+//                alert("请填写必填项")
+                layer.open({
+                    skin:"demo-class",
+                    title:"提示",
+                    content:"请填写必填项"
+                })
+            }
+        }
+    })
+})
+
+
+
+
+
+
+
+//    $(".arrow").on("click", function () {
+//        $(".area").trigger("click");
+//    })
+
+
+
+</script>
+
+</html>

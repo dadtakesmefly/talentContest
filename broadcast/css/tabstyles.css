@@ -1,0 +1,122 @@
+html,body {
+	background: #FFFCEA;
+	margin: 0;
+	box-sizing: border-box;
+	max-width: 640px !important;
+	margin: 0 auto;
+}
+
+.tabs-style-iconbox nav {
+background: rgba(255,255,255,0.4);
+}
+.tabs-style-iconbox nav ul li.tab-current a {
+background: #FFCD7A;
+box-shadow: -1px 0 0 #FFCD7A;
+}
+.tabs nav ul {
+	position: relative;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1200px;
+	list-style: none;
+	-ms-box-orient: horizontal;
+	-ms-box-pack: center;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+}
+
+.tabs nav ul li {
+	position: relative;
+	z-index: 1;
+	display: block;
+	margin: 0;
+	text-align: center;
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	height: 0.8rem;
+	background-color: #FEEAB6;
+}
+
+.tabs nav a {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 2.5;
+}
+.content-wrap{
+	background-color: #FFF2CC;
+}
+.content-wrap section {
+	display: none;
+	margin: 0 auto;
+	padding: 1em;
+	/*max-width: 1200px;*/
+	margin-top: 5px;
+}
+.content-wrap section .one{
+	text-indent: 2em;
+	/*padding: 10px;*/
+	background-color: #FEEAB6;
+	padding:0.32rem 0.45rem 0.4rem 0.45rem ;
+	font-size: 0.20rem;
+	text-indent: 2em;
+	background-color: #FFEACB;
+	color:#A72E26;
+	line-height: 0.35rem;
+    letter-spacing:2px;
+	border-radius: 8px;
+	font-weight: 600;
+	margin-bottom: 0.3rem;
+
+}
+.content-wrap section.content-current {
+	display: block;
+	background-color: #FFF2CC;
+	margin-top: 15px;
+	padding: 10px;
+	background-clip: content-box;
+}
+a {
+	/*color: #2CC185;*/
+	text-decoration: none;
+	outline: none;
+}
+
+.tabs-style-iconbox nav ul li a {
+	overflow: visible;
+	padding: 0.23rem;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+.tabs-style-iconbox nav ul li a img{
+	width: 100%;
+}
+
+
+.tabs-style-iconbox nav ul li.tab-current a::after {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -10px;
+	width: 0;
+	height: 0;
+	border: solid transparent;
+	border-width: 10px;
+	border-top-color: #FFCD7A;
+	content: '';
+	pointer-events: none;
+}
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta type="description" content="获奖名单内容">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/entrance.css"/>
+    <script src="jquery-1.8.3/jquery.min.js"></script>
+    <title>获奖名单入口</title>
+</head>
+<body>
+   <div class="bg">
+       <img class="bgpic" src="./images/背景.png" alt=""/>
+       <img class="title" src="./images/头部title.png" alt=""/>
+       <img src="./images/获奖名单.png" alt=""/>
+       <img src="./images/点击查看.png" alt=""/>
+       <a href="./prize.html">获奖名单</a>
+       <a href="./goodteam.html">优秀辅导</a>
+       <ul>
+           <li>主办单位</li>
+           <li>陇南市文明办 陇南市总工会</li>
+           <li>协办单位</li>
+           <li>陇南市志愿服务联合会 陇南市教育局</li>
+           <li>陇南都市网 陇南市民政局 陇南市团委</li>
+           <li>陇南市妇联 爱信公益</li>
+           <li>支持机构</li>
+           <li>中国人保险公司陇南分公司 陇南富邦汽贸 源通鑫车行</li>
+           <li>陇南协和汽贸 陇南天晨汽贸 庆阳哈利卡汽车金融公司</li>
+           <li>陇南恒达海马4S店 陇南亨利汽贸 蜀大侠火锅店</li>
+           <li>晟朝名车 &nbsp;中安金控</li>
+       </ul>
+   </div>
+
+
+<!--<div class="links">-->
+    <!--<img src="images/爱信.png" alt=""/>-->
+    <!--<span>华夏爱信</span><br/>-->
+    <!--<span>让公益更简单</span>-->
+    <!--<span class="downloading">下载爱信APP</span>-->
+    <!--<img  class="close" src="images/取消按钮.png" alt=""/>-->
+<!--</div>-->
+
+<div class="foot"></div>
+<!--站长统计 start-->
+<div style="display:none">
+    <script src="lib/total.js"></script>
+</div>
+<!--站长统计 end -->
+</body>
+<script>
+    /*让文字和标签的大小随着屏幕的尺寸做变话 等比缩放*/
+    var html = document.getElementsByTagName('html')[0];
+    var width = window.innerWidth;
+    var fontSize = 100 / 640 * width;
+    if (width > 640) {
+        fontSize = 100;
+    }
+    html.style.fontSize = fontSize + 'px';
+    window.onresize = function () {
+        var html = document.getElementsByTagName('html')[0];
+
+        var width = window.innerWidth;
+
+        var fontSize = 100 / 640 * width;
+
+        html.style.fontSize = fontSize + 'px';
+    }
+</script>
+</html>
+

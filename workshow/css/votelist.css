@@ -1,0 +1,255 @@
+html,body{
+    background-color: #FFFCEA;
+    box-sizing: border-box;
+    max-width: 640px !important;
+    margin: 0 auto;
+
+    /*padding: 0 10px;*/
+}
+.top{
+
+}
+.topnav{
+    font-size: 0.30rem;
+    height: 0.8rem;
+    line-height:0.8rem;
+    background-color:#E94E3D;
+    color:white;
+
+}
+.topnav img{
+    display: inline-block;
+    width: 0.4rem;
+    vertical-align: middle;
+    margin-left: 0.1rem;
+    cursor: pointer;
+}
+.topnav span{
+    font-size: 0.3rem;
+    float: right;
+    margin-right: 0.2rem;
+    cursor: pointer;
+}
+.banner img{
+    width: 100%;
+}
+.msg{
+    padding: 0 10px;
+    margin-top: 0.5rem;
+
+}
+.msg .out{
+    background-color: #FFEACB;
+    border: 4px solid #C82323;
+    position: relative;
+    border-radius: 8px;
+    padding: 0 0.2rem;
+}
+.msg .out .title{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -0.34rem;
+}
+.msg ul{
+    margin-top: 0.55rem;
+    padding-bottom: 0.3rem;
+}
+.msg ul li{
+    color:#D92B2C ;
+    line-height : 0.4rem;
+    font-size: 0.22rem;
+}
+.info{
+    /*padding: 0.1rem ;*/
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.info ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0.2rem
+
+}
+.info ul li{
+    border:4px solid #FFA97A;
+    text-align: center;
+    background-color: #FEEAB6;
+    padding: 0.4rem 0rem;
+    width: 33%;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+.info ul li:nth-child(2){
+    margin: 0 0.1rem;
+}
+.info ul li p:nth-child(1){
+   color:#A72E26;
+    font-size: 0.26rem;
+    font-weight: 600;
+}
+.info ul li p:nth-child(2){
+   color:#E74538;
+    font-size: 0.26rem;
+    margin-top: 0.2rem;
+    font-weight: 600;
+
+}
+
+section{
+    /*margin-top: 0.1rem;*/
+    background-color: #FFF4D2;
+}
+.content-wrap{
+   margin-top: -0.2rem;
+    
+}
+.content-wrap section{
+    position: relative;
+    /*padding: 0.3rem 0.2rem !important;*/
+}
+.content-wrap section ul{
+
+}
+.content-wrap section ul li{
+    width: 49%;
+    position: relative;
+    background-color: #FCE3A3;
+    margin-top: 10px;
+    padding: 0.2rem;
+    box-sizing: border-box;
+
+}
+.content-wrap section ul li:nth-child(2n){
+    float: right;
+}
+.content-wrap section ul li:nth-child(2n+1){
+    float: left;
+}
+.content-wrap section ul li img{
+    /*width:100%;*/
+    width: 100%;
+    height: 3rem;
+
+
+}
+.content-wrap section .bianhao {
+    margin-top: 0px;
+    font-size: 0.24rem;
+    padding: 0.2rem 0rem 0.2rem 0.2rem;
+    color: white;
+    background:url("../images/编号背景.png") 0 0.1rem  no-repeat ;
+    -webkit-background-size: 45%;
+    background-size: 45%;
+    text-indent: -0.5em;
+    margin-top: -0.3rem;
+}
+.content-wrap ul li .piaoshutext{
+    color:#A72E26 ;
+    position: absolute;
+    right: 0.15rem;
+    top:0.31rem;
+    font-size: 0.26rem;
+
+}
+.content-wrap ul li .piaoshu{
+    color:#E7483B ;
+}
+
+.content-wrap section p span{
+    font-size: 0.26rem;
+}
+.content-wrap ul li .bianhao .num{
+    font-size: 0.28rem;
+    color: white;
+    margin-left: -0.1rem;
+}
+.content-wrap section .box{
+   padding: 0.3rem 0;
+    background-color: #fffadc;
+}
+.content-wrap section .toupiao {
+    display: block;
+    background-color: #E74538;
+    color:white;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.1rem 0.2rem;
+    border-radius: 8px;
+    letter-spacing: 5px;
+    font-size: 0.22rem;
+    box-shadow: 0 4px 0 #C82323;
+}
+
+
+.page{
+    line-height: 40px;
+    line-height: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.page select{
+    height: 34px;
+    width: 100px;
+    margin: 0 20px;
+    background-color:pink;
+}
+.backtop{
+    display:none;
+    position: fixed;
+    bottom:1.5rem;
+    right: 10px;
+}
+.backtop img{
+    display: inline;
+    width:1rem;
+
+}
+.links {
+    padding: 0.3rem  0.5rem  0.2rem  0.5rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.links img {
+    float: left;
+    width: 16%;
+    vertical-align: middle;
+    margin-top: -0.1rem;
+    margin-right: 0.2rem;
+}
+.links span:nth-child(2) {
+    font-size: 0.34rem;
+    color: white;
+}
+.links span:nth-child(4) {
+    font-size: 0.26rem;
+    color: #a1a1a1;
+    line-height: 0.5rem;
+    margin-top: 0.25rem;
+}
+.links span:nth-child(5) {
+    font-size: 0.26rem;
+    color: #fff;
+    display: block;
+    background: url("../images/下载安卓app背景.png") center center no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    padding: 0.15rem;
+    position: absolute;
+    right: 23%;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 0.5rem;
+}
+.links .close {
+    width: 2%;
+    position: absolute;
+    top: 15%;
+    right: 15%;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>报名参赛_留守儿童才艺大赛</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/less.css"/>
+    <script src="jquery-1.8.3/jquery.min.js"></script>
+    <script src="layer/layer.js"></script>
+    <script src="lib/template.js"></script>
+    <style>
+        body .demo-class .layui-layer-title{background:#E74538; color:#fff; border: none;}
+        body .demo-class .layui-layer-btn a {background:#E74538;}
+        body .demo-class .layui-layer-btn a {border: none}
+        body .demo-class .layui-layer-btn .layui-layer-btn1{background:#999;}
+        .layui-layer-setwin .layui-layer-max {
+            background-position: -32px -40px;
+            display: none !important;
+        }
+        .layui-layer-min{
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+    <img src="images/红色头顶.png" alt=""/>
+</div>
+<div class="step">
+    <div class="inner">
+        <ul>
+            <li>报名参加活动</li>
+            <li>上传参赛作品(在5月21日前必须上传)</li>
+            <div class="border"></div>
+        </ul>
+        <!--<div class="border"></div>-->
+    </div>
+</div>
+<form action="" id="myform" class="myform">
+    <h3 class="title">上传参赛作品</h3>
+    <div class="getworkname">
+        <input type="text" name="work" id="workname" placeholder="请填写参赛作品名称"/>
+    </div>
+
+    <div class="diqu">
+        <select name="type" class="area" id="area">
+            <option value="请选择作品类型">请选择作品类型</option>
+            <option value="1">手工</option>
+            <option value="2">绘画</option>
+            <option value="3">书法</option>
+            <option value="4">写作</option>
+        </select>
+        <img class="arrow" src="images/arrow.png" alt=""/>
+    </div>
+    <span class="tipss clearfix">本次活动分手工、绘画、书法、写作四类</span>
+
+    <div class="links">
+        <span id="multi" >上传作品照片 <i class="tips"></i></span><br/>
+        <span id="single" >上传参赛人手执作品照片<i class="tipsss"></i> </span>
+        <input  id="hold" name="holdPicture" style="display: none" value="" type="text"/>
+        <input style="display: none" name="worksContent" id="ipt" value="" type="text"/>
+        <!--<input id="pics" value="" type="text"/>-->
+        <!--<input id="handpic" value="" type="text"/>-->
+    </div>
+    <h3 class="demo">参赛人手持作品示例</h3>
+    <div class="image">
+        <div class="box">
+            <img src="images/w3.jpg" alt=""/>
+        </div>
+    </div>
+    <input style="display: none" id="actphone" name="actRegisterPhone" value="" type="text"/>
+    <div class="mask">
+        <div class="masks">
+            <input type="button" id="reset" class="reset" value="暂时不提交参赛作品"/>
+            <input type="button" class="sbm" id="sbm" value="提交参赛作品"/>
+        </div>
+    </div>
+</form>
+<br/>
+
+<!--站长统计 start-->
+<div style="display:none">
+    <script src="lib/total.js"></script>
+</div>
+<!--站长统计 end -->
+</body>
+<script>
+
+
+//    var baseUrl = "http://192.168.31.248:7070/AXGY_OP/"; //本地联调地址
+//var baseUrl = "https://rest.cnaisin.com:8443/AXGY_OP/";
+     var baseUrl = "https://rest.cnaisin.com:15443/AXGY_OP/"; //product
+    var workDetailUrl = baseUrl + "workDetail"; //作品详情
+    var uploadEntriesUrl = baseUrl + "uploadEntries"; //上传文件
+
+
+    /*让文字和标签的大小随着屏幕的尺寸做变话 等比缩放*/
+    var html = document.getElementsByTagName('html')[0];
+    //    console.log(html);
+    /*取到屏幕的宽度*/
+    var width = window.innerWidth;
+    //    console.log(width);
+    /* 640 100  320 50 */
+    var fontSize = 100/640*width;
+    //    console.log(fontSize);
+    /*设置fontsize*/
+    if(width>640){
+        fontSize=100;
+    }
+    html.style.fontSize = fontSize +'px';
+    window.onresize = function(){
+        var html = document.getElementsByTagName('html')[0];
+//        console.log(html);
+        /*取到屏幕的宽度*/
+        var width = window.innerWidth;
+//        console.log(width);
+        /* 640 100  320 50 */
+        var fontSize = 100/640 * width;
+//        console.log(fontSize);
+
+        html.style.fontSize = fontSize +'px';
+    }
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
+        var context = "";
+        if (r != null)
+            context = r[2];
+        reg = null;
+        r = null;
+        return context == null || context == "" || context == "undefined" ? "" : context;
+    }
+    var actphone=GetQueryString("actRegisterPhone");
+    console.log(GetQueryString("actRegisterPhone"));
+    $("#actphone").attr("value",actphone);
+    $("#reset").on("click", function () {
+        window.location.href="./workdetails.html"+"?actRegisterPhone="+actphone
+    })
+    $.fn.serializeObject = function()
+    {
+        var list=[];
+        var name=[];
+        var phone=[];
+        var a = this.serializeArray();
+        $.each(a, function(index,obj) {
+
+            if (obj.name == 'teacher') {
+                name.push(obj.value)
+            }
+            if (obj.name == 'teachertel') {
+                phone.push(obj.value)
+            }
+        });
+        for(var i=0;i<name.length;i++){
+            var o={};
+            if(name[i]!=""|| phone[i]!=""){
+                o.name=name[i];
+                o.phone=phone[i];
+                list.push(o);
+            }
+        }
+//        var key= a.length+1
+//        var v={"name":"teacherTel","value":JSON.stringify(list)}
+//        a[key]=v;
+        return a;
+    };
+            $("#sbm").die().live("click", function () {
+
+                $("#myform").serializeObject()
+                console.log($("#myform").serializeObject());
+                $.ajax({
+//                  url:"https://rest.cnaisin.com:8443/AXGY_OP/checkCodes",
+                    url:uploadEntriesUrl,
+                    type:"post",
+                    data:$("#myform").serializeObject(),
+                    success: function (data) {
+                        console.log(data);
+                        var workNumber=data.data.workNumber;
+                        if(data.ok==true){
+                            layer.open({
+                                skin:"demo-class",
+                                title:"提示",
+                                content:"提交成功",
+                                end: function () {
+                                    window.location.href='./show.html'+"?actRegisterPhone="+actphone+"&workNumber="+workNumber
+                                }
+                            })
+                        }
+                        else{
+                            layer.open({
+                                skin:"demo-class",
+                                title:"提示",
+                                content:"请填写必填项"
+                            })
+
+                        }
+                    }
+                })
+            })
+  $(function () {
+      $("#single").on("click", function () {
+          layer.open({
+              type: 2,
+              title: '上传参赛者手执作品照片',
+              shadeClose: true,
+              shade: false,
+              maxmin: true, //开启最大化最小化按钮
+              area: ['100%', '100%'],
+              content: './singlepic.html'
+          });
+      });
+      $("#multi").on("click", function () {
+//          $(this).attr("href","./multipic.html")
+          layer.open({
+              type: 2,
+              title: '上传参赛作品照片',
+              shadeClose: true,
+              shade: false,
+              maxmin: true, //开启最大化最小化按钮
+              area: ['100%', '100%'],
+              content: './multipic.html'
+          });
+      });
+  })
+</script>
+</html>

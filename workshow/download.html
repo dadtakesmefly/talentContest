@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/download.css"/>
+    <script src="jquery-1.8.3/jquery.min.js"></script>
+    <title>爱心公益，让公益更简单</title>
+</head>
+<body>
+<div class="top">
+    <img src="images/爱信.png" alt=""/>
+    <h3>爱信APP</h3>
+    <p>爱信公益App，随时随地做公益。让您快速找到感兴趣的团队or活动，及时跟公益伙伴分享您的实时动态，一站式管理自己的团队，记录您公益历程的点点滴滴，让您的公益更真实！</p>
+</div>
+<div class="links">
+    <a id="a_href_url" href="">
+        安卓版下载
+    </a>
+    <a href="itms-apps://itunes.apple.com/app/id1190774356">
+        IOS版下载
+    </a>
+</div>
+<p class="foot">Copyright © 2017 华夏爱信 Cnaisin.com</p>
+<div style="display:none">
+    <script src="lib/total.js"></script>
+</div>
+<!--站长统计 end -->
+
+</body>
+<script>
+
+    /*让文字和标签的大小随着屏幕的尺寸做变话 等比缩放*/
+    var html = document.getElementsByTagName('html')[0];
+    var width = window.innerWidth;
+    var fontSize = 100/640*width;
+    if(width>640){
+        fontSize=100;
+    }
+    html.style.fontSize = fontSize +'px';
+    window.onresize = function(){
+        var html = document.getElementsByTagName('html')[0];
+        var width = window.innerWidth;
+        var fontSize = 100/640 * width;
+        html.style.fontSize = fontSize +'px';
+    }
+
+</script>
+<script type="text/javascript">
+    var website_url = "http://www.cnaisin.com";
+    // var android_url = "https://pro-app-qn.fir.im/60470926f784a0f7dff9959b572331edf81ee651.apk?attname=爱信公益v.apk_1.1.2.apk&e=1492712441&token=LOvmia8oXF4xnLh0IdH05XMYpH6ENHNpARlmPc-T:4kE7qyQx_cenZ30qmhWHTkFu0K4=";
+    // var ios_url = "itms-apps://itunes.apple.com/app/id1190774356";   // "https://itunes.apple.com/app/id1190774356";
+    var android_url = "";
+    var ios_url = "";
+    var queryUrl = "https://restapi.cnaisin.com:7443/backend/queryUrl";
+    var yingyongbaoUrl = "http://a.app.qq.com/o/simple.jsp?pkgname=com.cnaisin.axgy";
+
+    function initUrl(){
+        $.ajax({
+            url: queryUrl,
+            async: false,
+            type: "POST",
+            success: function(result){
+                android_url = result.data.android_url;
+                ios_url = result.data.ios_url;
+                return false;
+            }
+        });
+
+    }
+
+    window.onload = function(){
+//        console.log("启动");
+        initUrl();
+        $("#a_href_url").attr("href", android_url);
+        download();
+    }
+
+
+
+    /**
+     * 下载
+     */
+    function download() {
+
+        //判断访问终端
+        var browser={
+            versions:function(){
+                var u = navigator.userAgent,
+                        app = navigator.appVersion;
+                return {
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
+                    iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+                    weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+                    qq: u.match(/\sQQ/i) == " qq" //是否QQ
+                };
+            }(),
+            language:(navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+
+        var u = navigator.userAgent.toLowerCase();
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) ||(u.indexOf('iPhone') > -1) || (u.indexOf('Mac') > -1) || (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) ; //ios终端
+        var isWeiXin = u.match(/MicroMessenger/i) == "micromessenger";
+
+        if(isiOS){
+            $("#iframe1").attr("src", ios_url);
+        }else if(isWeiXin && (!isiOS)){
+            window.location.href = yingyongbaoUrl;
+        }else  if(isAndroid){
+            $("#iframe1").attr("src", android_url);
+        }else{
+            //$("#iframe1").attr("src", android_url);
+        }
+    };
+
+</script>
+</html>

@@ -1,0 +1,340 @@
+html,
+body {
+  background-color: #FFFCEA;
+  box-sizing: border-box;
+  max-width: 640px !important;
+  margin: 0 auto;
+}
+.step {
+  padding: 20px 20px 5px 20px;
+  font-size: 0.3rem;
+  /*background-color: #FEEAB6;*/
+  /*background-clip: content-box;*/
+}
+.inner {
+  padding: 5px;
+  background-color: #FEEAB6;
+  border-radius: 8px;
+  position: relative;
+  z-index: 10;
+}
+.inner ul {
+  position: relative;
+}
+.inner li {
+  line-height: 0.5rem;
+  color: #A72E26;
+  margin-left: 10px;
+  list-style: none;
+  padding: 0 0.4rem;
+  margin-bottom: 0.1rem;
+  font-size: 0.26rem;
+  /*font-weight: 600;*/
+}
+.inner li:nth-child(1) {
+  background-image: url("../images/one.png");
+  background-size: 6%;
+  background-position: 0% 50%;
+  /*背景图片的定位*/
+  background-repeat: no-repeat;
+  /*禁止图片平铺*/
+}
+.inner li:nth-child(2) {
+  background-image: url("../images/two.png");
+  background-size: 6%;
+  background-position: 0% 50%;
+  /*背景图片的定位*/
+  background-repeat: no-repeat;
+  /*禁止图片平铺*/
+}
+.border {
+  border: 1px dashed #A72E26;
+  width: 0px;
+  height: 0.26rem;
+  position: absolute;
+  top: 0.4rem;
+  left: 0.33rem;
+  z-index: 1;
+}
+.top img {
+  width: 100%;
+}
+input {
+  background-color: #FEEAB6;
+  height: 0.70rem;
+  line-height: 0.70rem;
+  line-height: normal;
+  vertical-align: middle;
+  width: 100%;
+  margin-bottom: 0.04rem;
+  text-indent: 1em;
+  color: #DF8135;
+  border-radius: 6px;
+  font-size: 0.2rem;
+}
+.myform {
+  padding: 0 20px;
+}
+.myform .title {
+  font-size: 0.36rem;
+  font-family: "SimHei";
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  color: #A72E26;
+}
+.myform .diqu {
+  position: relative;
+  width: 40%;
+  float: left;
+  vertical-align: middle;
+  z-index: 10;
+}
+.myform .diqu .area {
+  background-color: #FEEAB6;
+  height: 0.70rem;
+  width: 100%;
+  vertical-align: middle;
+  margin-bottom: 4px;
+  color: #DF8135;
+  border-radius: 6px;
+  text-indent: 1em;
+  font-size: 0.2rem;
+  z-index: 10;
+}
+.myform .diqu .area option {
+  width: 30%;
+  color: #DF8135;
+  background-color: #fff;
+  font-size: 0.2rem;
+}
+.myform .diqu .arrow {
+  position: absolute;
+  top: 0.2rem;
+  right: 5px;
+  z-index: 0 ;
+  width: 10%;
+}
+.myform .tipss {
+  padding: 0 0px;
+  vertical-align: middle;
+  color: #D92B2C;
+  margin-top: 0.5rem;
+  line-height: 0.1rem;
+}
+.pic {
+  font-size: 0.36rem;
+  font-family: "SimHei";
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  color: #A72E26;
+}
+.links {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 0.30rem;
+}
+.links span {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #FFCD7A;
+  border-radius: 8px;
+  height: 0.70rem;
+  line-height: 0.7rem;
+  color: #A72E26;
+  font-weight: 600;
+  font-family: '微软雅黑', Arial;
+  letter-spacing: 1px;
+  font-size: 0.28rem;
+  box-shadow: 0 4px 0 #EEB65A;
+}
+.links .tipsss {
+  font-size: 0.2rem;
+  margin-left: 0.1rem;
+}
+.demo {
+  font-size: 0.36rem;
+  font-family: "SimHei";
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  color: #A72E26;
+}
+.image {
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: content-box;
+  background-clip: content-box;
+  border-radius: 10px;
+}
+.image .box {
+  border-radius: 30px;
+  padding: 10px;
+  background-color: #FEEAB6;
+}
+.image .box img {
+  padding: 5px;
+  text-align: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+}
+.box3 {
+  position: relative;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+.box3 .confirm {
+  margin-top: -0.4rem;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  font-family: "SimHei";
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  font-size: 0.36rem;
+  transform: translateX(-50%);
+  width: 1.7rem;
+  color: #A72E26;
+  background-color: #FFFCEA;
+}
+.box3 hr {
+  border: 1px solid #A72E26;
+}
+.mask {
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+}
+.mask .masks {
+  width: 100%;
+  height: 100%;
+}
+.mask .masks input {
+  background-color: #FEEAB6;
+  height: 0.70rem;
+  line-height: normal;
+  vertical-align: middle;
+  width: 100%;
+  margin-bottom: 0.04rem;
+  text-indent: 1em;
+  color: #DF8135;
+  border-radius: 6px;
+}
+.mask .masks p {
+  text-align: left;
+  margin-left: 20px;
+  color: white;
+  line-height: 0.5rem;
+}
+.mask .masks .test {
+  width: 70%;
+  border-radius: 6px 0 0 6px;
+}
+.mask .masks .btn {
+  width: 30%;
+  background-color: #FFCD7A;
+  text-indent: 0em;
+  font-family: "SimHei";
+  border-radius: 0 6px 6px 0px;
+  -webkit-appearance: none;
+  background-clip: content-box;
+  box-sizing: border-box;
+  color: #A72E26;
+}
+.mask .masks .sbm {
+  width: 90%;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  background-color: #E74538;
+  border-radius: 8px;
+  box-shadow: 0px 5px 0px #C82323;
+  color: white;
+  font-family: "SimHei";
+  -webkit-appearance: none;
+  background-clip: content-box;
+  box-sizing: border-box;
+  font-size: 0.36rem;
+  padding-left: 0px;
+  text-align: center;
+  text-indent: 0em;
+}
+.foot {
+  height: 3rem;
+  background-color: #FFF4D2;
+  padding: 0 20px;
+  background-clip: content-box;
+}
+.mask {
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+}
+.mask .masks {
+  width: 100%;
+  height: 100%;
+}
+.mask .masks input {
+  background-color: #FEEAB6;
+  height: 0.70rem;
+  line-height: normal;
+  vertical-align: middle;
+  width: 100%;
+  margin-bottom: 0.04rem;
+  text-indent: 1em;
+  color: #DF8135;
+  border-radius: 6px;
+}
+.mask .masks p {
+  text-align: left;
+  margin-left: 20px;
+  color: white;
+  line-height: 0.5rem;
+}
+.mask .masks .test {
+  width: 70%;
+  border-radius: 6px 0 0 6px;
+}
+.mask .masks .btn {
+  width: 30%;
+  background-color: #FFCD7A;
+  text-indent: 0em;
+  font-family: "SimHei";
+  border-radius: 0 6px 6px 0px;
+  -webkit-appearance: none;
+  background-clip: content-box;
+  box-sizing: border-box;
+  color: #A72E26;
+}
+.mask .masks .reset {
+  width: 40%;
+  float: left;
+  margin-top: 0.4rem;
+  font-size: 0.22rem;
+  text-indent: 0;
+  box-shadow: 0 4px 0 #EEB65A;
+}
+.mask .masks .sbm {
+  width: 40%;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  background-color: #E74538;
+  border-radius: 8px;
+  box-shadow: 0px 5px 0px #C82323;
+  color: white;
+  font-family: "SimHei";
+  -webkit-appearance: none;
+  background-clip: content-box;
+  box-sizing: border-box;
+  font-size: 0.24rem;
+  padding-left: 0px;
+  text-align: center;
+  text-indent: 0em;
+  float: right;
+}
+.links .tip,
+.tips {
+  margin-left: 10px;
+  font-size: 0.2rem;
+}

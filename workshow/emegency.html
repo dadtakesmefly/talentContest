@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
+    <title>留守儿童才艺大赛_紧急通知</title>
+    <style>
+        *{
+            margin:0;
+            padding: 10px;
+        }
+        h3{
+            font-family: "微软雅黑";
+            text-align: center;
+            font-size: 0.3rem;
+            font-weight: 900;
+        }
+        img{
+            width: 20%;
+            margin: 0 auto;
+            display: block;
+        }
+        h4{
+            font-family: "华文细黑";
+            font-size: 0.28rem;
+        }
+        p:nth-child(4){
+            font-family: Hiragino Sans GB;
+            text-indent: 2em;
+            font-size: 0.26rem;
+            letter-spacing: 2px;
+            line-height: 0.5rem;
+            margin-top: -0.1rem;
+        }
+        span{
+            color: #FF0000;
+        }
+        ul{
+            float: right;
+            font-size: 0.26rem;
+            list-style: none;
+        }
+        li{
+            margin-bottom: -0.1rem;
+        }
+        li:nth-child(1){
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<!--<img src="images/紧急通知.png" alt=""/>-->
+<img src="images/紧急.png" alt=""/>
+<h3>关于大赛投票的紧急通知</h3>
+<h4>各位参赛团队、辅导老师、志愿者们：</h4>
+<p>鉴于近期有人恶意刷票给大赛造成了公平性缺失。
+    大赛主办方紧急协商决定:一方面要对恶意刷票进行控制，
+    一方面考虑到大家的热情，特制定了新的措施，对于后台系统监测到恶意刷票的我们将该作品的投票数归零，
+    重新进行投票，仍然可以参与专业评分，不过入围或名次有可能受到影响，希望大家谅解。<span>如再发现刷票者一律取消参赛资格！！</span>
+    还各位参赛者一个公平公正的参赛环境！谢谢合作！！最后祝各位参赛者都能取得好成绩！！特此公告说明。</p>
+<ul>
+    <li>大赛组委会</li>
+    <li>2017年5月22日</li>
+</ul>
+
+</body>
+<script>
+    /*让文字和标签的大小随着屏幕的尺寸做变话 等比缩放*/
+    var html = document.getElementsByTagName('html')[0];
+    var width = window.innerWidth;
+    var fontSize = 100/640*width;
+    if(width>640){
+        fontSize=100;
+    }
+    html.style.fontSize = fontSize +'px';
+    window.onresize = function(){
+        var html = document.getElementsByTagName('html')[0];
+
+        var width = window.innerWidth;
+
+        var fontSize = 100/640 * width;
+
+        html.style.fontSize = fontSize +'px';
+    }
+</script>
+</html>

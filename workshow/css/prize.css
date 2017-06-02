@@ -1,0 +1,183 @@
+html,
+body {
+    background-color: #FFFCEA;
+    box-sizing: border-box;
+    max-width: 640px !important;
+    margin: 0 auto;
+
+}
+.top img {
+    width: 100%;
+}
+.tabs nav ul li{
+    height: auto !important;
+
+}
+.tabs nav ul li a{
+    text-align: center;
+}
+.tabs nav ul li  img{
+    width: 70%!important;
+    margin: 0 auto;
+}
+
+.list{
+    padding:4px 0px;
+}
+.list  ul  li .left{
+    width: 0.8rem;
+    margin-left: 0.2rem;
+    margin-top: 0.1rem;
+}
+.list  ul  li .left img{
+    width: 70%;
+    margin-top: 0.2rem;
+}
+.list  ul  li .left p{
+    color: #DF8135;
+    font-size: 0.22rem;
+    margin-top: 0.1rem;
+}
+.list  ul  li .pic{
+    border: 0.06rem solid #F4CB8E;
+    border-radius: 8px;
+    /*width: 30%;*/
+    width: 2rem;
+    height: 1.7rem;
+    margin-right: 10px;
+}
+.list  ul  li .center{
+    position: relative;
+}
+
+.list  ul  li .center .bianhao{
+    position: absolute;
+    width: 10%;
+    left: 1.05rem;
+    top:-0.1rem;
+    background: url("../images/编号背景.png") left 0.15rem no-repeat ;
+    -webkit-background-size: 50%;
+    background-size: 50%;
+    padding: 0.4rem;
+    font-size: 0.26rem;
+    text-align: left;
+    text-indent: -0.36rem;
+    line-height: 0rem;
+    color:#FFF9E6
+}
+.list ul {
+    /*padding-top: 0.1rem;*/
+}
+.list ul li{
+    /*margin-bottom: 0.4rem*/
+    margin-top: 0.1rem;
+    overflow: hidden;
+}
+.list ul li h3{
+    color: #DF8135;
+    font-size: 0.28rem;
+    margin-top: 0.1rem;
+    /*line-height: 1.1rem;*/
+    margin-top: 0.4rem;
+    /*overflow: hidden;*/
+    /*text-overflow:ellipsis;*/
+    /*white-space: nowrap;*/
+    /*line-height: 0.5rem;*/
+    /*font-weight: 600;*/
+}
+.list ul li p:nth-child(4){
+    margin-top: 0.1rem;
+    font-size: 0.26rem;
+    color: #A72E26;
+    padding-bottom: 0.1rem;
+    font-weight: 600;
+}
+.list ul li p:nth-child(4) span{
+    color:#E74538;
+    font-size: 0.28rem;
+    font-weight: 600;
+}
+/*.list ul li p:nth-child(5){*/
+    /*font-size: 0.26rem;*/
+    /*color:#E74538;*/
+    /*font-weight: 600;*/
+    /*margin-bottom: 0.4rem;*/
+/*}*/
+/*.list ul li p:nth-child(5) span{*/
+    /*font-size: 0.28rem;*/
+    /*color:#E74538;*/
+    /*font-weight: 600;*/
+    /*margin-bottom: 0.4rem;*/
+/*}*/
+hr{
+    margin-top: 0.6rem;
+    border: 1px solid #ECD4A6;
+    border-top: none;
+}
+section{
+    background-color: #FFFCEA !important;
+    padding: 0!important;
+}
+.content-wrap{
+    background-color: #FFFCEA !important;
+    padding: 0 !important;
+}
+.foot{
+    height: 70px;
+}
+.backtop{
+    display:none;
+    position: fixed;
+    bottom:1.5rem;
+    right: 10px;
+}
+.backtop img{
+    display: inline;
+    width:1rem;
+}
+.links {
+    padding: 0.3rem  0.5rem  0.2rem  0.5rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.links img {
+    float: left;
+    width: 16%;
+    vertical-align: middle;
+    margin-top: -0.1rem;
+    margin-right: 0.2rem;
+}
+.links span:nth-child(2) {
+    font-size: 0.34rem;
+    color: white;
+}
+.links span:nth-child(4) {
+    font-size: 0.26rem;
+    color: #a1a1a1;
+    line-height: 0.5rem;
+    margin-top: 0.25rem;
+}
+.links span:nth-child(5) {
+    font-size: 0.26rem;
+    color: #fff;
+    display: block;
+    background: url("../images/下载安卓app背景.png") center center no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    padding: 0.15rem;
+    position: absolute;
+    right: 23%;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 0.5rem;
+}
+.links .close {
+    width: 2%;
+    position: absolute;
+    top: 15%;
+    right: 15%;
+}

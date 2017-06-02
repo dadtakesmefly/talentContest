@@ -1,0 +1,173 @@
+html,
+body {
+    background-color: #FFFCEA;
+    box-sizing: border-box;
+    max-width: 640px !important;
+    margin: 0 auto;
+}
+
+.tabs nav ul li{
+    height: auto !important;
+
+}
+.tabs nav ul li a{
+    text-align: center;
+}
+.tabs nav ul li:nth-child(1)  img{
+    width: 52%!important;
+    margin: 0 auto;
+}
+.tabs nav ul li:nth-child(2)  img{
+    width:66% !important;
+    margin: 0 auto;
+}
+
+section{
+    background-color: #FFFCEA !important;
+    padding: 0!important;
+}
+.content-wrap{
+    background-color: #FFFCEA !important;
+    padding: 0 !important;
+}
+.content-wrap section div{
+    position: relative;
+    padding: 15px;
+}
+.content-wrap #section-iconbox-1 div p:nth-child(1){
+    position: absolute;
+    width: 0.35rem;
+    height: 0.35rem;
+    background-color: #FFCD7A;
+    border-radius: 50%;
+    text-align: center;
+    color: #DF8135;
+    line-height: 0.35rem;
+    top:50%;
+    transform: translateY(-50%);
+}
+.content-wrap #section-iconbox-1 div p:nth-child(2){
+    color: #A72E26;
+    font-weight: 600;
+    text-indent: 2.3em;
+    font-size: 0.26rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.content-wrap #section-iconbox-1 div p:nth-child(3){
+    color: #A72E26;
+    font-size: 0.24rem;
+    text-indent: 2.5em;
+    margin-top: 0.2rem;
+}
+.content-wrap #section-iconbox-1 div p:nth-child(3) span{
+    color: #E74538;
+    font-size: 0.26rem;
+
+}
+.content-wrap #section-iconbox-2 div p:nth-child(1){
+    float: left;
+
+    width: 0.35rem;
+    height: 0.35rem;
+    background-color: #FFCD7A;
+    border-radius: 50%;
+    text-align: center;
+    color: #DF8135;
+    line-height: 0.35rem;
+}
+.content-wrap #section-iconbox-2 div{
+        padding-bottom: 10px;
+}
+.content-wrap #section-iconbox-2 div p:nth-child(2){
+    color: #A72E26;
+    float: left;
+    font-weight: 600;
+    text-indent: 2.3em;
+    font-size: 0.26rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.content-wrap #section-iconbox-2 div p:nth-child(3){
+    color: #A72E26;
+    float: right;
+    font-size: 0.24rem;
+    text-indent: 2.5em;
+
+}
+.content-wrap #section-iconbox-2 div p:nth-child(3) span{
+    color: #E74538;
+    font-size: 0.26rem;
+
+}
+.content-wrap #section-iconbox-1 hr{
+    border: 1px solid #ECD4A6;
+    border-bottom: none;
+}
+.content-wrap #section-iconbox-2 hr {
+    border: 1px solid #ECD4A6;
+    border-bottom: none;
+    margin-top: 10px;
+}
+
+.foot{
+    height: 60px;
+}
+.backtop{
+    display:none;
+    position: fixed;
+    bottom:1.5rem;
+    right: 10px;
+}
+.backtop img{
+    display: inline;
+    width:1rem;
+}
+.links {
+    padding: 0.3rem  0.5rem  0.2rem  0.5rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.links img {
+    float: left;
+    width: 16%;
+    vertical-align: middle;
+    margin-top: -0.1rem;
+    margin-right: 0.2rem;
+}
+.links span:nth-child(2) {
+    font-size: 0.34rem;
+    color: white;
+}
+.links span:nth-child(4) {
+    font-size: 0.26rem;
+    color: #a1a1a1;
+    line-height: 0.5rem;
+    margin-top: 0.25rem;
+}
+.links span:nth-child(5) {
+    font-size: 0.26rem;
+    color: #fff;
+    display: block;
+    background: url("../images/下载安卓app背景.png") center center no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    padding: 0.15rem;
+    position: absolute;
+    right: 23%;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 0.5rem;
+}
+.links .close {
+    width: 2%;
+    position: absolute;
+    top: 15%;
+    right: 15%;
+}

@@ -1,0 +1,113 @@
+#testform{
+  display: none;
+}
+/*body{*/
+  /*padding: 0;*/
+  /*margin:0;*/
+  /*font-family: Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-self;*/
+  /*color: #666;*/
+/*}*/
+/*.title{*/
+  /*background-color: #0983C7;*/
+  /*line-height: 40px;*/
+  /*text-align: center;*/
+  /*color:#fff;*/
+  /*font-family: '微软雅黑';*/
+/*}*/
+.container{
+  /*width: 100%;*/
+  position: absolute;
+  top:7.9rem;
+  height: 1.5rem;
+  padding: 0 20px;
+  margin:0 auto;
+  max-width:640px;
+  /*background-color: #fff;*/
+  border-radius: 6px;
+  /*min-height: 600px;*/
+  /*height: 3rem;*/
+}
+label{
+  display:block;
+  width: 3rem;
+  height: 1.5rem;
+  text-align: center;
+  /*margin: 30px auto;*/
+  border-radius: 6px;
+  background-color: #FFCD7A;
+  
+  /*border:2px dashed #ddd;*/
+  overflow: hidden;
+  cursor: pointer;
+}
+.icon{
+  margin: 0 auto;
+  margin-top: 0.1rem;
+}
+/*label span{*/
+  /*display:block;*/
+  /*width:50px;*/
+  /*height:50px;*/
+  /*border-radius: 100%;*/
+  /*border:3px solid #0983C7;*/
+  /*margin:30px auto 15px;*/
+  /*position:relative;*/
+/*}*/
+label em{
+  font-style: normal;
+  text-align: center;
+  display:block;
+  font-family: "SimHei";
+  color: #A72E26;
+  font-size: 0.24rem;
+  margin-top: 10px;
+}
+/*label span:before, label span:after{*/
+  /*display:block;*/
+  /*content:'';*/
+  /*background-color: #0983C7;*/
+  /*position: absolute;*/
+/*}*/
+/*label span:before{*/
+  /*width:3px;*/
+  /*height:30px;*/
+  /*top:10px;*/
+  /*left:24px;*/
+/*}*/
+/*label span:after{*/
+  /*width:30px;*/
+  /*height:3px;*/
+  /*top:24px;*/
+  /*left:10px;*/
+/*}*/
+.uploaded-result{
+  /*line-height: 30px;*/
+  /*margin: 0 20px;*/
+  position: absolute;
+  width: 100%;
+  top: -0.3rem;
+  left: 102%;
+  overflow: hidden;
+
+}
+/*.uploaded-result span{*/
+  /*display: block;*/
+/*}*/
+.uploaded-result img{
+  display:none;
+
+  /*margin: 20px auto;*/
+  /*width:30%;*/
+  max-width: 70%;
+  overflow: hidden;
+  height: 2.5rem;
+
+}
+.progress{
+  color: #A72E26;
+  position: absolute;
+  top: 35%;
+  left: 100%;
+  width: 2rem;
+  font-size: 0.24rem;
+}

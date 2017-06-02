@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/show.css"/>
+    <script src="jquery-1.8.3/jquery.min.js"></script>
+    <script src="layer/layer.js"></script>
+    <script src="lib/template.js"></script>
+    <title>查看参赛儿童作品</title>
+    <style>
+        body .demo-class .layui-layer-title{background:#E74538; color:#fff; border: none;}
+        body .demo-class .layui-layer-btn a {background:#E74538;}
+        body .demo-class .layui-layer-btn a {border: none}
+        body .demo-class .layui-layer-btn .layui-layer-btn1{background:#999;}
+    </style>
+</head>
+<body>
+<!--投票阶段start-->
+<!--<div class="votetitle">-->
+    <!--<span>【绘画】</span><span>"做文明小学生"学生优秀美术作品展</span>-->
+<!--</div>-->
+
+<!--投票阶段start-->
+
+<div class="top">
+    <img src="images/作品详情页背景.png" alt=""/>
+</div>
+
+<div class="show">
+
+</div>
+
+<!--提交作品阶段start-->
+<!--<div class="vote">-->
+    <!--<div class="innerbox">-->
+        <!--<p>现在为作品报送阶段</p>-->
+        <!--<p><span>5月25日</span>开启正式投票</p>-->
+        <!--<span class="xiugai">修改作品</span>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<input  type="text" id="msg" name="msg" value=""/>-->
+<!--提交作品阶段end-->
+
+<!--投票阶段start-->
+<div class="vote">
+    <div class="innerbox ">
+        <p style="text-align: center;text-indent: -1em">当前票数 <span class="num"></span> 票</p>
+        <p style="text-align: center;text-indent: -1em">将作品告诉您的伙伴，以获得更多票数</p>
+    </div>
+</div>
+
+<!--投票阶段start-->
+
+<div class="msg clearfix">
+    <div class="out">
+        <img class="title" src="images/参赛作者信息.png" alt=""/>
+        <!--<img class="pic"  src="images/w3.jpg" alt=""/>-->
+        <div class="childpic"></div>
+        <div class="box">
+            <div class="child"></div>
+            <div class="school"></div>
+        </div>
+    </div>
+</div>
+<div class="teacher">
+    <div class="box clearfix">
+        <img class="fudaoyuan" src="images/辅导员.png" alt=""/>
+
+        <!--报名阶段start-->
+        <!--<a  class="editor"><img class="bianji fl" src="images/编辑.png" alt=""/><span>修改辅导老师</span></a>-->
+        <!--报名阶段start-->
+        <ul class="teacherlist">
+
+        </ul>
+    </div>
+</div>
+<div class="organization">
+    <div class="box clearfix">
+        <img src="images/参赛公益组织(学校)信息.png" alt=""/>
+        <ul>
+            <li class="foot fl"></li>
+            <li class="zuzhi fl"></li>
+            <br/><br/>
+            <li>
+                <span>活动负责人</span>
+                <span class="fuzeren"></span>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div >
+    <span class="back">返回作品列表页</span>
+</div>
+</body>
+ <!--站长统计 start-->
+<div style="display:none">
+<script src="lib/total.js"></script>
+</div>
+ <!--站长统计 end -->
+
+<script>
+//    var baseUrl = "http://192.168.31.248:7070/AXGY_OP/"; //本地联调地址
+//      var baseUrl = "https://rest.cnaisin.com:8443/AXGY_OP/";
+     var baseUrl = "https://rest.cnaisin.com:15443/AXGY_OP/"; //product
+    var workDetailUrl = baseUrl + "workDetail"; //作品详情
+
+    var  voteShowUrl =  baseUrl + "voteShow";
+
+
+    $(function () {
+        $(".xiugai").on("click", function () {
+            window.location.href='./halfupload.html'+"?actRegisterPhone="+actphone+"&workNumber="+workNumber+"&disable="+123
+        })
+        $(".editor").on("click", function () {
+            window.location.href='./resetinfo.html'+"?actRegisterPhone="+actphone+"&workNumber="+workNumber
+        })
+    })
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
+        var context = "";
+        if (r != null)
+            context = r[2];
+        reg = null;
+        r = null;
+        return context == null || context == "" || context == "undefined" ? "" : context;
+    }
+    var actphone=GetQueryString("actRegisterPhone");
+    var workNumber=GetQueryString("workNumber");
+    console.log(GetQueryString("actRegisterPhone"));
+    console.log(workNumber);
+    $("#actphone").attr("value",actphone);
+
+    /*让文字和标签的大小随着屏幕的尺寸做变话 等比缩放*/
+    var html = document.getElementsByTagName('html')[0];
+    var width = window.innerWidth;
+    var fontSize = 100/640*width;
+    if(width>640){
+        fontSize=100;
+    }
+    html.style.fontSize = fontSize +'px';
+    window.onresize = function(){
+        var html = document.getElementsByTagName('html')[0];
+
+        var width = window.innerWidth;
+
+        var fontSize = 100/640 * width;
+
+        html.style.fontSize = fontSize +'px';
+    }
+    $(function () {
+        $(".back").on("click", function () {
+            window.location.href='./worklist.html'+"?actRegisterPhone="+actphone
+        })
+    })
+
+</script>
+<script type="text/html" id="banner">
+    <ul>
+        {{each worksContent}}
+        <li>
+            <img src="{{$value}}" alt=""/>
+            <img src="images/shadow.png" alt=""/>
+        </li>
+        {{/each}}
+    </ul>
+</script>
+<script type="text/html" id="school">
+        {{if school }}
+            {{value}}
+        {{/if}}
+</script>
+<script type="text/html" id="teacher">
+        {{each teacherTel}}
+            <li>{{$value.name}}</li>
+        {{/each}}
+</script>
+<script type="text/html" id="foot">
+    {{if area}}
+    <span>{{value}}</span>
+    {{/if}}
+
+</script>
+<script type="text/html" id="zuzhi">
+    {{if organization}}
+    <span>{{value}}</span>
+    {{/if}}
+
+</script>
+<script type="text/html" id="fuzeren">
+    {{if person}}
+    <span>{{value}}</span>
+    {{/if}}
+
+</script>
+<script type="text/html" id="childname">
+    {{if child}}
+    <span>{{value}}</span>
+    {{/if}}
+
+</script>
+<script type="text/html" id="childpic">
+    {{if childUrl}}
+      <img class="pic" src="{{childUrl}}" alt=""/>
+    {{/if}}
+</script>
+<script>
+    $(function () {
+        $.ajax({
+            url:workDetailUrl,
+            datatype:"json",
+            data:{"actRegisterPhone":actphone,"workNumber":workNumber},
+            type:"post",
+            success: function (result) {
+                console.log(result);
+                console.log(result.data.childUrl)
+                console.log(result.data.teacherTel);
+                console.log((typeof result.data.teacherTel));
+                console.log(result.data.votesNumber);
+                var parms=JSON.stringify(result.data.teacherTel)
+                console.log(parms);
+                $("#msg").attr("value",parms);
+                var html = template("banner",result.data)
+                $(".show").html(html);
+                var html1 = template("school",result.data.school)
+                $(".school").html(html1)
+                var html2 = template("teacher",result.data)
+                $(".teacherlist").html(html2)
+                var html3 = template("foot",result.data.area)
+                $(".foot").html(html3);
+                var html4=template("zuzhi",result.data.organization)
+                $(".zuzhi").html(html4);
+                var html5=template("fuzeren",result.data.person)
+                $(".fuzeren").html(html5);
+                var html6=template("childname",result.data.child)
+                $(".child").html(html6);
+                var html7=template("childpic",result.data)
+                $(".childpic").html(html7);
+                $(".num").html(result.data.votesNumber)
+            }
+        })
+
+    })
+
+</script>
+</html>
