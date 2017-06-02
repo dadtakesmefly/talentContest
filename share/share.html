@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
+    <title>爱信公益，让公益更简单</title>
+    <meta itemprop="image" content="images/爱信.png"/>
+    <meta name="description" itemprop="description" content="公益专属App,随时随地做公益" />
+    <meta name="keywords" content="华夏爱信公益，让公益更简单">
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/less.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/template.js"></script>
+</head>
+<body>
+        <div class="top">
+            <img src="images/banner未加载.png" alt=""/>
+        </div>
+        <div class="mask">
+            <p class="title"></p>
+            <span class="zhuangtai"></span>
+        </div>
+        <div class="content">
+            <h3>
+                <img  src="images/活动时间与地点.png" alt=""/>活动时间与地点
+            </h3>
+            <p>活动时间：<span class="starttime"></span></p>
+            <!--活动地点过长-->
+            <span class="fl" style="display: inline-block;font-size: 0.30rem;color: #333;margin-top: 0.2rem">活动地点：</span>
+            <span class="adress" style="overflow: hidden;display: block;font-size: 0.26rem;color: #666;margin-top: 0.25rem"></span>
+            <!--正常地址-->
+            <!--<p>活动地点：<span class="adress"></span></p>-->
+            <p class="jihetime">集合时间：<span class="collecttime"></span></p>
+            <span class="fl jihedidian" style="display: inline-block;font-size: 0.30rem;color: #333;margin-top: 0.2rem">集合地点：</span>
+            <span class="collectadress" style="overflow: hidden;display: block;font-size: 0.26rem;color: #666;margin-top: 0.25rem"></span>
+        </div>
+        <p class="border"></p>
+        <h3 class="scope"><img src="images/活动规模.png" alt=""/>活动规模：
+            <span class="scale"></span>
+        </h3>
+        <h3 class="scope noborder"><img src="images/活动发起.png" alt=""/>活动发起：<span class="team"></span></h3>
+        <p class="space"></p>
+        <div class="contents">
+        <h3 class="scope detail"><img src="images/活动详情.png" alt=""/>活动详情</h3>
+        <div id="box" class="one">
+        </div>
+        <div id="btn">
+            <span>展开</span><img src="images/下箭头.png" alt=""/>
+        </div>
+        </div>
+        <p class="space"></p>
+
+        <h3 class="scope zanzhu"><img src="images/赞助支持.png" alt=""/>活动赞助：<span class="response"></span></h3>
+        <p class="space"></p>
+        <div class="contentss">
+            <h3 class="info">
+            <img  src="images/活动信息.png" alt=""/>活动信息
+        </h3>
+         <p class="cost">活动费用：<span class="fee">免费</span></p><br/>
+            <!--<p class="cost">活动标签：<span class="tip"> </span> <span class="div"> </span></p>-->
+            <span class="fl" style="display: inline-block;font-size: 0.32rem;color: #333;margin-top: 0.2rem">活动标签：</span>
+            <span class="cost" style="overflow: hidden;display: block;font-size: 0.26rem;color: #666;margin-top: 0.25rem"> <span class="tip"> </span> <span class="div"> </span></span>
+        </div>
+        <p class="space"></p>
+        <div class="contentsss">
+            <h3 class="info">
+                <img  src="images/活动联系人.png" alt=""/>活动联系人
+            </h3>
+            <ul class="list">
+                <li>
+                    <img class="userUrl" src="images/默认头像.png" alt=""/><span class="username"></span>
+                    <!--<img class="phone" src="images/电话.png" alt=""/>-->
+                    <!--<span class="txt">电话</span>-->
+                    <p class="border padding" style="border: 1px solid transparent"></p>
+                </li>
+            </ul>
+        </div>
+        <div class="foot">
+            <p>活动信息来自爱信公益APP</p>
+            <span>分享者 <span class="sharer"></span> <span class="acting">正在活动中</span> <span class="role"></span></span>
+        </div>
+        <div class="links">
+            <img src="images/爱信.png" alt=""/>
+            <span>华夏爱信</span><br/>
+            <span>让公益更简单</span>
+            <span class="downloading">下载爱信APP</span>
+            <img  class="close" src="images/取消按钮.png" alt=""/>
+        </div>
+
+        <!--站长统计 start-->
+<div style="display:none">
+    <script src="js/total.js"></script>
+</div>
+<!--站长统计 end -->
+<script>
+
+//    var baseUrl = "https://192.168.31.248:8443/backend/share/act";//测试
+    var baseUrl ="https://rest.cnaisin.com:8443/backend/share/act";
+    var weixinUrl="http://192.168.31.248:7070/AXGY_OP/weixin";
+    /*让文字和标签的大小随着屏幕的尺寸做变话 等比缩放*/
+    var html = document.getElementsByTagName('html')[0];
+    var width = window.innerWidth;
+    var fontSize = 100/640*width;
+    if(width>640){
+        fontSize=100;
+    }
+    html.style.fontSize = fontSize +'px';
+    window.onresize = function(){
+        var html = document.getElementsByTagName('html')[0];
+        var width = window.innerWidth;
+        var fontSize = 100/640 * width;
+        html.style.fontSize = fontSize +'px';
+    }
+
+    $(function () {
+        $(".close").on("click", function () {
+            $(".links").fadeOut()
+        })
+        $(".downloading").on("click", function () {
+            window.location.href="./download.html"
+        })
+    })
+
+</script>
+
+<script type="text/html" id="scale">
+    {{if personNum}}
+    <span class="scale">{{personNum}}</span>
+    {{/if}}
+ </script>
+ <script type="text/html" id="team">
+     {{if organizer}}
+     <span class="team">{{organizer.name}}</span>
+     {{/if}}
+ </script>
+ <script type="text/html" id="details">
+        {{each photoText as v i}}
+        {{if i%2==0}}<div id="showbox{{i/2}}">{{/if}}
+            {{if v.type=="text"}}<p>{{v.content}}</p>{{/if}}
+            {{if v.type=="image"}}<img src="{{v.content}}" alt=""/>{{/if}}
+            {{if i%2==1}}</div>{{/if}}
+        {{/each}}
+ </script>
+ <script type="text/html" id="mask">
+        {{each activityTabs as v i}}
+            <span>{{v.name}}</span>
+        {{/each}}
+ </script>
+        <script>
+            $(function () {
+//                var actId = '${!(obj.actId)}' || '';
+//                var userId = '${!(obj.userId)}' || '';
+                var actId = "30";
+                var userId = "VGVzdF9jYlVGS0d6bjNscFo=";
+
+                function dateConvert(dateStr){
+                    var da = Number(dateStr);
+                    da = new Date(da);
+//             var year = da.getFullYear()+'年';
+                    var month = da.getMonth()+1+'月';
+                    var date = da.getDate()+'日';
+                    var hour = da.getHours();
+                    var minute = da.getMinutes() < 10 ? "0" + da.getMinutes() : da.getMinutes() ;
+//             console.log([year,month,date].join(''));
+                    return [month,date].join('') + " "  + hour + ":"+ minute
+                }
+                $.ajax({
+//                    url:"https://192.168.31.248:8443/backend/share/act",
+                    url:baseUrl,
+                    datatype:"json",
+                    data: {"actId": actId, "userId": userId},
+                    type:"post",
+                    success: function (result) {
+//                        console.log(result);
+//                        console.log(result.data.collectionTimePlace.length);
+//                        console.log(result.data.sponsorshipSupport);
+//                        console.log(result.data.customLabel);
+//                        console.log(result.data.activityTabs);
+//                        console.log(result.data.userName);
+//                        console.log(result.data.actStatus);
+                        //活动开始时间
+                        var startTime = dateConvert(result.data.startTime);
+                        //结束时间
+                        var finishTime = dateConvert(result.data.finishTime);
+                        console.log(finishTime);
+//                      console.log([year,month,date].join(''));
+
+                        //活动状态
+                        if(result.data.actStatus=="Preparation"){
+                            $(".zhuangtai").html("报名中");
+                            $(".zhuangtai").css({"background-image":"url('./images/状态背景.png')"})
+                        }
+                        if(result.data.actStatus=="Processing"){
+                            $(".zhuangtai").html("进行中");
+                            $(".zhuangtai").css({"background-image":"url('./images/状态背景.png')"})
+                        }
+                        if(result.data.actStatus=="Finish"){
+                            $(".zhuangtai").html("已结束");
+                            $(".zhuangtai").css({"background-image":"url('./images/gray.png')"})
+                            $(".zhuangtai").css({"color":"#666"})
+                        }
+                        if(result.data.actStatus=="Archived"){
+                            $(".zhuangtai").html("已结束");
+                            $(".zhuangtai").css({"background-image":"url('./images/gray.png')"})
+                            $(".zhuangtai").css({"color":"#666"})
+                        }
+
+                        //活动集合时间
+                        var collect, year1, month1, date1;
+                        if(result.data.collectionTimePlace.length != 0 ){
+                            var collect = Number( $.inArray("collectionTime", result.data.collectionTimePlace[0]) ? result.data.collectionTimePlace[0].collectionTime : "");
+                            collect = new Date(collect);
+                            var year1 = collect.getFullYear()+'年';
+                            var month1 = collect.getMonth()+1+'月';
+                            var date1 = collect.getDate()+'日';
+                            if([year1,month1,date1].join('')){
+                                $(".collecttime").html([year1,month1,date1].join(''))
+                            }
+
+                        }
+                        if(result.data.collectionTimePlace.length == 0){
+                            $(".jihetime").css({"display":"none"})
+                        }
+
+                        $(".top img").attr("src",result.data.coverPicture);
+                        //活动标题
+                        $(".title").html(result.data.actName)
+                        //地址和时间
+                        if(result.data.addressAndTime.length != 0){
+                            $(".adress").html(result.data.addressAndTime[0].province
+                                    +result.data.addressAndTime[0].city
+                                    +result.data.addressAndTime[0].district
+                                    +result.data.addressAndTime[0].street
+                            )
+                        }
+                        $(".starttime").html( startTime + " 至 " + finishTime )
+                        if(result.data.customLabel){
+                            var obj=result.data.customLabel;
+                            for(var i=0;i<obj.length;i++){
+                                var span1=document.createElement("span");
+                                span1.setAttribute("class","span1")
+                                var str=obj.toString();
+                                console.log(str);
+                                var arr=str.split(",")
+                                console.log(arr);
+                                $(".div").append(span1);
+                                $(".span1").html(str);
+                            }
+                        }
+
+                        //集合地点和时间
+                        if(result.data.collectionTimePlace.length != 0){
+                            $(".collectadress").html(result.data.collectionTimePlace[0].province
+                                    +result.data.collectionTimePlace[0].city
+                                    +result.data.collectionTimePlace[0].district
+                                    +result.data.collectionTimePlace[0].street
+                            )
+                        }
+                        if(result.data.collectionTimePlace.length == 0){
+                            $(".jihedidian").css({"display":"none"})
+                        }
+
+                        //赞助支持
+                        if(result.data.sponsorshipSupport.length != 0){
+                            if(result.data.sponsorshipSupport[0].title||result.data.sponsorshipSupport[0].content||!result.data.sponsorshipSupport[0].content){
+                                if(result.data.sponsorshipSupport[0].title.length<13){
+                                    $(".response").html(result.data.sponsorshipSupport[0].title);
+                                }
+                                if(result.data.sponsorshipSupport[0].title.length>=13){
+                                    var subtitle= result.data.sponsorshipSupport[0].content.substring(0,13);
+                                    subtitle=subtitle.replace(subtitle.charAt(subtitle.length-1),"...")
+                                    $(".response").html(subtitle);
+                                }
+                            }
+                            if(result.data.sponsorshipSupport[0].title==""&&result.data.sponsorshipSupport[0].content.length<13){
+                                $(".response").html(result.data.sponsorshipSupport[0].content);
+                            }
+                            if(result.data.sponsorshipSupport[0].title==""&&result.data.sponsorshipSupport[0].content.length>=13){
+                                var sub= result.data.sponsorshipSupport[0].content.substring(0,13);
+                                sub=sub.replace(sub.charAt(sub.length-1),"...")
+                                $(".response").html(sub);
+                            }
+                        }
+                        if(result.data.sponsorshipSupport.length == 0){
+                            $(".zanzhu").hide()
+                        }
+
+                        if(result.data.relatedUserAct=="NotJoin"||result.data.relatedUserAct=="AppliedJoin"){
+                            $(".acting").html("");
+                            $(".role").html("");
+                        }
+                        if(result.data.relatedUserAct=="ActAdmin"){
+                            $(".role").html("担任管理员");
+                        }
+                        if(result.data.relatedUserAct=="ActLeader"){
+                            $(".role").html("担任负责人");
+                        }
+                        if(result.data.relatedUserAct=="ActParter"){
+                            $(".role").html("担任参与者");
+                        }
+                        //分享者姓名
+                        $(".sharer").html(result.data.userName);
+
+//                      $(".fee").html(result.data.fee)
+
+                        //判断是真实姓名还是昵称
+                        if(result.data.actLeader.trueName!=""){
+                            $(".username").html(result.data.actLeader.trueName)
+                        }
+                        if(result.data.actLeader.trueName==""){
+                            $(".username").html(result.data.actLeader.nickName)
+                        }
+                        //判断头像
+                        if(result.data.actLeader.photoUrl==""){
+//                            $(".userUrl").attr("src","images/默认头像.png")
+                        }
+                        else{
+                            $(".userUrl").attr("src",result.data.actLeader.photoUrl)
+                        }
+                        //动态更换title
+                        if(result.data.actLeader.trueName)
+                        document.title=result.data.actName+"_爱信公益,让公益更简单";
+                        var html=template("scale",result.data)
+                        $(".scale").html(html);
+                        var html1=template("team",result.data)
+                        $(".team").html(html1);
+                        var html2=template("mask",result.data)
+                        $(".tip").html(html2);
+
+                        var html3=template("details",result.data)
+                        $("#box").html(html3);
+                        $("#box").find("#showbox0").css({"display":"block"}).siblings().css({"display":"none"})
+                        $(function () {
+                            var isopen=true;
+                            $("#btn").on("click", function () {
+                                if(isopen){
+                                    $("#box").find("#showbox0").css({"display":"block"}).siblings().slideToggle();
+                                    $(this).find("span").html("收起")
+                                    $(this).find("img").attr("src","${ctxPath}/static/images/上箭头.png")
+                                }
+                                else{
+                                    $("#box").find("#showbox0").css({"display":"block"}).siblings().slideToggle();
+                                    $(this).find("span").html("展开");
+                                    $(this).find("img").attr("src","${ctxPath}/static/images/下箭头.png")
+                                }
+                                isopen=!isopen;
+                            })
+                        })
+                    }
+                })
+            })
+        </script>
+        <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <script>
+            $.ajax({
+                url:weixinUrl,
+                data:{"appId":"wx5c2a0cf831ae3610","url":window.location.href},
+                type:"post",
+                success: function (result) {
+                    console.log(result.data);
+                    console.log(result.data.jsapi_ticket);
+                    wx.config({
+                        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                        appId: 'wx5c2a0cf831ae3610', // 必填，公众号的唯一标识
+                        timestamp: result.data.timestamp, // 必填，生成签名的时间戳
+                        nonceStr: result.data.nonceStr, // 必填，生成签名的随机串
+                        signature: result.data.signature,// 必填，签名，见附录1
+                        jsApiList: [
+                            "onMenuShareTimeline",
+                            "onMenuShareAppMessage",
+                            "onMenuShareQQ",
+                            "onMenuShareWeibo",
+                            "onMenuShareQZone",
+                        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                    });
+                    window.share_config = {
+                        "share": {
+                            "imgUrl":"./images/爱信.png",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议前缀必须在。
+                            "desc" : "公益专属App,随时随地做公益",//摘要,如果分享到朋友圈的话，不显示摘要。
+                            "title" : document.title,//分享卡片标题
+//                          "link": window.location.href,//分享出去后的链接，这里可以将链接设置为另一个页面。
+                            "success":function(){//分享成功后的回调函数
+                            },
+                            'cancel': function () {
+                                // 用户取消分享后执行的回调函数
+                            }
+                        }
+                    };
+                    wx.ready(function () {
+                        wx.onMenuShareAppMessage(share_config.share);//分享给好友
+                        wx.onMenuShareTimeline(share_config.share);//分享到朋友圈
+                        wx.onMenuShareQQ(share_config.share);//分享给手机QQ
+                        wx.onMenuShareWeibo(share_config.share);//分享给微博
+                        wx.onMenuShareQZone(share_config.share)//QQ空间
+                    });
+
+                }
+
+            })
+        </script>
+</body>
+</html>
