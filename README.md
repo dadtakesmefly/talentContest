@@ -112,6 +112,39 @@ $('body').bind("touchmove",function(e){
 #  恢复滑动	
 $("body").unbind("touchmove"); 
 
+# 获取当前时间 年月日时分秒
+
+	 function showLocale(objD) {
+		var str,colorhead,colorfoot;
+		var yy = objD.getYear();
+		if(yy<1900) yy = yy+1900;
+		var MM = objD.getMonth()+1;
+		if(MM<10) MM = '0' + MM;
+		var dd = objD.getDate();
+		if(dd<10) dd = '0' + dd;
+		var hh = objD.getHours();
+		if(hh<10) hh = '0' + hh;
+		var mm = objD.getMinutes();
+		if(mm<10) mm = '0' + mm;
+		var ss = objD.getSeconds();
+		if(ss<10) ss = '0' + ss;
+		var ww = objD.getDay();
+		if  ( ww==0 )  colorhead="<font color=\"black\">";
+		if  ( ww > 0 && ww < 6 )  colorhead="<font color=\"black\">";
+		if  ( ww==6 )  colorhead="<font color=\"black\">";
+		colorfoot="</font>"
+		str = colorhead + yy + "年" + MM + "月" + dd + "日" + hh + ":" + mm + ":" + ss + "  " + colorfoot;
+		return(str);
+          };
+	  
+    	function tick() {
+		var today;
+		today = new Date();
+		document.getElementById("localtime").innerHTML = showLocale(today);
+		window.setTimeout("tick()", 1000);    //时间自动更新
+	   };
+	   tick();
+
 # 将毫秒数转换为正常的日期，年月日时分秒
     var myDate = new Date();
     var year=myDate.getFullYear()+"年";
