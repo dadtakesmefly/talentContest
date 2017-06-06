@@ -104,3 +104,129 @@
 	 	}
 	     })
          </script>
+
+# 阻止滑动
+
+$('body').bind("touchmove",function(e){
+            e.preventDefault();  });
+#  恢复滑动	
+$("body").unbind("touchmove"); 
+
+# 将毫秒数转换为正常的日期，年月日时分秒
+    var myDate = new Date();
+    var year=myDate.getFullYear()+"年";
+    var month = myDate.getMonth()+1+'月';
+    var date = myDate.getDate()+'日';
+    var hours= myDate.getHours();
+    var minutes= myDate.getMinutes();
+    var seconds=myDate.getSeconds()
+    hours<10?hours="0"+hours:hours=""+hours;
+    minutes<10?minutes=":0"+minutes:minutes=":"+minutes;
+    seconds<10?seconds=":0"+seconds:seconds=":"+seconds;
+    var time =[year,month,date,hours,minutes,seconds].join('')
+    alert(time)
+	
+# 获取url中的参数
+	function GetQueryString(name) {
+	    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	    var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
+	    var context = "";
+	    if (r != null)
+		context = r[2];
+	    reg = null;
+	    r = null;
+	    return context == null || context == "" || context == "undefined" ? "" : context;
+	}
+	var actphone=GetQueryString("actRegisterPhone");
+
+# 移动端rem布局
+	 /*让文字和标签的大小随着屏幕的尺寸做变话 等比缩放*/  100px=1rem
+	var html = document.getElementsByTagName('html')[0];
+	var width = window.innerWidth;
+	var fontSize = 100/640*width;
+	if(width>640){
+	    fontSize=100;
+	}
+	html.style.fontSize = fontSize +'px';
+	window.onresize = function(){
+	    var html = document.getElementsByTagName('html')[0];
+	    var width = window.innerWidth;
+	    var fontSize = 100/640 * width;
+	    html.style.fontSize = fontSize +'px';
+	}
+
+# 返回前一页但是要定位在之前的页面高度
+1，先记录当前页面滚动条的高度，然后通过url将这个htmltop参数传递到下一个页面，
+
+2，在下一个页面返回时候，再将这个htmltop参数通过url传递过来
+
+3，然后$("html,body").animate({scrollTop:htmltop}, 600);即可
+
+4，多个tab栏时候，先获取tab栏的li的索引，
+
+	$(".tabs ul li").on("click", function () {
+	    eq=$(this).index()
+	    console.log(eq);
+	})
+	
+然后也是传递到下一个页面，返回时候再将这个参数返回过来
+
+然后自动触发tab栏的点击事件
+
+	if(eq){
+	    console.log(eq);
+	    $(".tabs ul li").eq(eq).trigger("click");
+	}
+	
+即可
+
+# 七牛压缩图片，判断后台是否有其他类型的操作
+	   <script type="text/html" id="head">
+	    <ul class="clearfix">
+	        {{each list_1 as v i}}
+	        <li>
+	            <p class="bianhao">作品编号<br/><span class="num">{{v.workNumber}}</span></p>
+	            <p class="piaoshutext">票数：<span class="piaoshu">{{v.votesNumber}}</span></p>
+	       <img src="{{v.worksContent[0].split('?')[0]}}?{{ v.worksContent[0].split('?')[1]?v.worksContent[0].split('?')[1]+'/size- limit/100k!':'imageMogr2/size-limit/100k!'}} ">
+	            <div class="box"><a class="toupiao" href="javascript:;">投票</a></div>
+	            <span style="display: none" class="phone">{{v.actRegisterPhone}}</span>
+	        </li>
+	        {{/each}}
+	    </ul>
+	   </script>
+	   	  
+# 克隆
+深克隆，克隆事件，并且每次只克隆一个。
+
+	$(function () {
+		    $("#add").on("click", function () {
+			$(".addd").first().append($(".addtitle1:first").first().clone(true).attr('class',"addtitle1 clone").attr("style","display:block"));
+			$(".remove").on("click", function () {
+			    $(this).parent(".clone").remove();
+			})
+		    });
+		})
+
+# 文本环绕
+	
+	       <span class="one">地址：</span>
+	       <span class="two">很长的一段文本</span>
+	       
+	       <style>
+		       .one{
+		       float：left；
+		       display:inline-block;
+		       }
+		       .two{
+		       overflow:hidden;
+		       display:block;
+		       }
+	       </style>
+	     
+# Jq的not选择器
+
+		if(result.data.worksContent.length>=2){
+		    $(".show ul li:not(li:eq(0))").find("div,.bianhao").hide()
+		    $(".show ul li:not(li:eq(0)) img").css({"margin-top":"-0.7rem"})
+		}
+	     
