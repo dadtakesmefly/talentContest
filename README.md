@@ -229,4 +229,19 @@ $("body").unbind("touchmove");
 		    $(".show ul li:not(li:eq(0))").find("div,.bianhao").hide()
 		    $(".show ul li:not(li:eq(0)) img").css({"margin-top":"-0.7rem"})
 		}
-	     
+
+# 单行文本溢出显示...
+	     p{
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+	     }
+
+# 多行文本溢出显示...
+	      p{
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3; //自己定义
+		overflow: hidden;
+		text-overflow:ellipsis；
+	     }
