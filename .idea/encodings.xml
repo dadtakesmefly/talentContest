@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/workshow/js/goodteam.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/workshow/js/halfregister.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/workshow/js/prize.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/workshow/js/resetinfo.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/workshow/js/show.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/workshow/js/uploadworks.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/workshow/js/votelist.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/workshow/js/voteshow.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/workshow/js/workdetails.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/workshow/js/worklist.js" charset="UTF-8" />
+  </component>
+</project>
