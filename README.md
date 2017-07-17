@@ -271,4 +271,9 @@ $("body").unbind("touchmove");
 		-webkit-line-clamp: 3; //自己定义
 		overflow: hidden;
 		text-overflow:ellipsis；
-	     }
+	     }
+# 传入两个参数
+		window.location.href='./halfupload.html'+"?actRegisterPhone="+actphone+"&nodisabled=123"
+
+# 回到前一页，但是刷新。
+		window.location.href=document.referrer
